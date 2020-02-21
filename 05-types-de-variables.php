@@ -24,8 +24,16 @@ echo '$bool est non interprétée entre simples guillemets';
 echo '<br>';
 // protection du simple guillemet avec l'antislash \ pour éviter que PHP interprète le symbole ' comme la fin du echo
 echo '$bool2 a comme valeur d\'affichage : "Rien "';
-echo "$bool";
+echo "$bool2";
+
+echo '<pre>var_dump($bool,$bool2); va nous afficher:<br>';
+// var_dump permet de débugger les variables
+var_dump($bool,$bool2);
+echo "</pre>";
+
+
 ?>
+
 <h2>Les variables de type texte - text - string - str</h2>
 <p>Les variables de type string sont très utilisées, elles sont également les plus risquées à manipuler</p>
 <?php
@@ -52,6 +60,62 @@ Donec molestie lorem nec euismod laoreet. In laoreet ante et velit hendrerit dic
 
 // transformation des retours à la ligne en br avec nl2br(string)
 echo nl2br($textedeBDD);
+
+echo '<pre>var_dump($text,$text2,$textedeBDD); va nous afficher:<br>';
+// var_dump permet de débugger les variables
+var_dump($text,$text2,$textedeBDD);
+echo "</pre>";
+
 ?>
+<h2>Les numériques entier, integer, int</h2>
+<p>Les variables de type int permettent de manipuler des chiffres sans virgule (mais qui peuvent être négatif)</p>
+<?php
+$lulu="55";// string
+$int = 0;
+$int2
+    =
+    5
+;
+$int3=-7;
+$int4 = 189;$int5=-12;
+?>
+<pre><?php var_dump($lulu,$int,$int2,$int3,$int4,$int5); ?></pre>
+<h2>Les numériques à virgule flottante, float</h2>
+<p>Fonctionnent comme les int, ! on utilise le "." à la place de la ","</p>
+<?php
+$float = 0.000000012;
+$float2 = -17.24;
+$float3 = 124.5;
+?>
+<pre><?php var_dump($float,$float2,$float3); ?></pre>
+<h2>Les tableaux - array - []</h2>
+<p>Les tableaux sont des conteneurs permettant de contenir un nombre non limité de données</p>
+<h3>Les tableaux indexés</h3>
+<p>Ce sont les tableaux par défaut qui ont comme clef des numériques. Le premier numérique est 0</p>
+<?php
+// tableau indexé
+$tableau = array(   "blabla",
+                    "lulu",
+                    5,
+                    7.8,
+                    true,
+                    NULL,
+    );
+// tableau pseudo indexé, mauvaise pratique, risque de bugs
+$tab2 = [
+    "Coucou",
+    "vous allez",
+    "bien?",
+    88 => "Moi",
+    "ça",
+    "va",
+    5 => "!",
+    "Presque",
+    "fini!!!",
+];
+?>
+<pre><?php var_dump($tableau,$tab2) ?></pre>
+<h3>Les tableaux associatifs</h3>
+<p>Ce sont des tableaux où l'on souhaite maîtriser les clefs</p>
 </body>
 </html>
