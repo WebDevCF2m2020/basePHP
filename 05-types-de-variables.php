@@ -133,8 +133,10 @@ $tabAssoc = [
     "themail" => "lulu@gmail.com",
     "pwd" => "ojf!hjkhd53_27sdti?01",
 ];
-
-echo "";
+// chaîne concaténée avec des "." car l'interprétation des variables tableaux associatifs (de même pour l'orienté objet) ne sont pas supportés ni interprétés entre "" (double guillemet)
+echo "id vaut : ".$tabAssoc['id']."<br>";
+// Mais il y a une astuce: entourez la variable de type tableau associatif (ou objet) d'accolades, { } et magie, ça fonctionne ;-)
+echo "login vaut : {$tabAssoc['login']} <br>";
 
 ?>
 <pre><?php
