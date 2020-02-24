@@ -145,5 +145,56 @@ echo "login vaut : {$tabAssoc['login']} <br>";
     print_r($tabAssoc);
 
     ?></pre>
+<h4>Les tableaux peuvent être "multidimensionnels"</h4>
+<?php
+$superArray = [
+  [
+      "id"=>1,
+      "titre"=>"Pizza ?",
+      "texte"=>"Qui veut une pizza pour midi?",
+  ],
+  [
+      "id"=>2,
+      "titre"=>"Tourte ?",
+      "texte"=>"Qui veut une tourte pour midi?",
+  ],
+  [
+      "id"=>3,
+      "titre"=>"Salade ?",
+      "texte"=>[
+          "salade niçoise",
+          "salade César",
+          "salade pêcheur",
+          "salade à la grecque",
+      ],
+  ],
+];
+?>
+<pre><?php
+    print_r($superArray);
+    var_dump($superArray);
+    ?></pre>
+<h3>Exercice</h3>
+<p>Avec des echo, affichez la valeur depuis la variable $superArray</p>
+<p>2</p>
+<?php
+
+?><br>
+<p>Qui veut une pizza pour midi?</p>
+<?php
+
+?><br>
+<p>Salade ?</p>
+<?php
+
+?><br>
+<p>salade niçoise</p>
+<?php
+
+?><br>
+<p>salade à la grecque</p>
+<?php
+
+?><br>
 </body>
 </html>
