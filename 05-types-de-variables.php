@@ -127,7 +127,21 @@ $tab2 = [
 <h3>Les tableaux associatifs</h3>
 <p>Ce sont des tableaux où l'on souhaite maîtriser les clefs</p>
 <?php
+$tabAssoc = [
+    "id" => 7,
+    "login" => "Lulu",
+    "themail" => "lulu@gmail.com",
+    "pwd" => "ojf!hjkhd53_27sdti?01",
+];
+
+echo "";
 
 ?>
+<pre><?php
+    var_dump($tabAssoc);
+    // pour un tableau on peut utiliser print_r, ce qui retire des informations mais rend la tableau plus lisible
+    print_r($tabAssoc);
+
+    ?></pre>
 </body>
 </html>
