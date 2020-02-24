@@ -178,23 +178,23 @@ $superArray = [
 <p>Avec des echo, affichez la valeur depuis la variable $superArray</p>
 <p>2</p>
 <?php
-
+echo $superArray[1]["id"];
 ?><br>
 <p>Qui veut une pizza pour midi?</p>
 <?php
-
+echo $superArray[0]["texte"];
 ?><br>
 <p>Salade ?</p>
 <?php
-
+echo $superArray[2]["titre"];
 ?><br>
 <p>salade niçoise</p>
 <?php
-
+echo $superArray[2]["texte"][0];
 ?><br>
 <p>salade à la grecque</p>
 <?php
-
+echo $superArray[2]["texte"][3];
 ?><br>
 </body>
 </html>
