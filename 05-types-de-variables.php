@@ -101,6 +101,15 @@ $tableau = array(   "blabla",
                     true,
                     NULL,
     );
+
+// on veut afficher des valeurs de ce tableau indexé
+echo "<p>$tableau[0] - $tableau[4]</p>";
+
+// l'importance des tableaux indexés:
+$dutxt = "coucou";
+echo "<p>$dutxt[0]|$dutxt[1]|$dutxt[2]</p>";
+
+
 // tableau pseudo indexé, mauvaise pratique, risque de bugs
 $tab2 = [
     "Coucou",
@@ -117,5 +126,8 @@ $tab2 = [
 <pre><?php var_dump($tableau,$tab2) ?></pre>
 <h3>Les tableaux associatifs</h3>
 <p>Ce sont des tableaux où l'on souhaite maîtriser les clefs</p>
+<?php
+
+?>
 </body>
 </html>
