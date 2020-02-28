@@ -41,8 +41,18 @@ if(!is_int($secondes/2)){
 if (round(($secondes)/2) != ($secondes)/2) {
     echo "<p>$secondes est un nombre impair</p>";
 }
-
-
 ?>
+<h2>SINON else</h2>
+<p>Le sinon est appelé si la condition if à la quelle il est rattaché vaut false</p>
+<?php
+// SI
+if($secondes%2){
+    echo "<p>SI==true | $secondes est un chiffre impair</p>";
+// SINON
+}else{
+    echo "<p>SI==false => SINON | $secondes est un chiffre pair</p>";
+}
+?>
+
 </body>
 </html>
