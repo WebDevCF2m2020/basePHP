@@ -100,6 +100,8 @@ if(is_float($values)){
     echo "Nous sommes dans le else final qui vaut null";
 }
 
+echo "<br>".hash(SHA256,"admin" );
+
 ?>
 
 
