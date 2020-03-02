@@ -17,7 +17,7 @@ $secondes = date("s");
 <p>Les conditions permettent de tester différents cas de figure, c'est la base de la programmation. Une condition qui
     est toujours vraie ou toujours fausse est une condition inutile!</p>
 <h2>SI - if</h2>
-<p>Condition qui va vérifier si ce qui est passé en paramètre vaut true (vraie) ou false (faux)</p>
+<p>Condition qui va vérifier si ce qui est passé en paramètre vaut true (vraie) ou false (faux) <a href="https://www.php.net/manual/fr/control-structures.if.php" target="_blank">if</a></p>
 <p>On va vérifier si le numérique $secondes généré par <a href="https://www.php.net/manual/fr/function.date.php"
                                                           target="_blank">date()</a> est impair</p>
 <?php
@@ -45,7 +45,7 @@ if (round(($secondes) / 2) != ($secondes) / 2) {
 }
 ?>
 <h2>SINON else</h2>
-<p>Le sinon est appelé si la condition if à la quelle il est rattaché vaut false</p>
+<p>Le sinon est appelé si la condition if à la quelle il est rattaché vaut false <a target="_blank" href="https://www.php.net/manual/fr/control-structures.else.php">else</a></p>
 <?php
 // SI
 if ($secondes % 2) {
@@ -57,7 +57,7 @@ if ($secondes % 2) {
 ?>
 <h2>SINON SI else if elseif</h2>
 <p>Si ce que l'on doit vérifier n'est pas une condition binaire (vrai/faux), on peut utiliser le else if (association du
-    else et du if) ou son raccourci: elseif</p>
+    else et du if) ou son raccourci: elseif <a target="_blank" href="https://www.php.net/manual/fr/control-structures.elseif.php"></a></p>
 <?php
 // on stocke des données de types différents dans un tableau indexé (clefs automatiques commençant à 0)
 $donnees = [
@@ -100,7 +100,7 @@ if(is_float($values)){
     echo "Nous sommes dans le else final qui vaut null";
 }
 
-echo "<br>".hash(SHA256,"admin" );
+echo "<br>".@hash(SHA256,"admin" );
 
 ?>
 
