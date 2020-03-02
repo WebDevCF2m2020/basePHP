@@ -103,7 +103,8 @@ if(is_float($values)){
 echo "<br>".@hash(SHA256,"admin" );
 
 ?>
-
+<h2>Les is_*</h2>
+<p>Vérifient le type de variable <a href="https://www.php.net/manual-lookup.php?pattern=is_&scope=quickref" target="_blank">is_*</a></p>
 
 <pre><?php var_dump($donnees); ?></pre>
 </body>
