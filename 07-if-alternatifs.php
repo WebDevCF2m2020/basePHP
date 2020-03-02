@@ -36,6 +36,53 @@ echo ($hasard>5)
 ?>
 </p>
 <hr>
+<h2>Les switch</h2>
+<p>Les switch sont une alternative au if elseif et else, ils vérifient l'égalité du contenu d'une variable</p>
+<p> Pages
+<a href="?id=1">1</a> | <a href="?id=2">2</a> | <a href="?id=3">3</a> |
+    <a href="?id=4">4</a> | <a href="?id=5">5</a> | <a href="?id=6">6</a>
+</p>
+<hr>
+<p>La variable de type get nommée "id" apparaît quand on clique sur un des liens ci-dessus, elle contient un numérique de 1 à 6, nous allons utiliser un switch pour afficher des pages différentes</p>
+<p>
+    <?php
+    // on va vérifier la valeur de la variable get nommée id, $_GET['id'],
+    // si elle existe isset : est initialisée
+    if(isset($_GET['id'])){
+        $idido = $_GET['id'];
+        // sinon (elle n'existe pas)
+    }else{
+        $idido = 1;
+    }
 
+
+switch($idido){
+    // $idido vaut 1
+    case 1:
+        echo "Nous sommes sur la page 1 de notre site";
+        // on arrête ici
+        break;
+    case 2:
+        echo "<script>alert('Ceci est la page $idido')</script>";
+        break;
+    case 3:
+        include "01-hello-world.php";
+        break;
+    // 4 ou 5
+    case 4:
+    case 5:
+        echo "page 4 ou 5 !!! => $idido";
+        break;
+    case 6:
+        echo "Dernière page de notre mini site";
+        break;
+    default:
+        echo "attaque pas mes variable get c......";
+
+
+}
+    ?>
+</p>
+<pre><?php var_dump($_GET) ?></pre>
 </body>
 </html>
