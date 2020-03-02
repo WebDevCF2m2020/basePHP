@@ -43,12 +43,13 @@ echo ($hasard>5)
     <a href="?id=4">4</a> | <a href="?id=5">5</a> | <a href="?id=6">6</a>
 </p>
 <hr>
-<p>La variable de type get nommée "id" apparaît quand on clique sur un des liens ci-dessus, elle contient un numérique de 1 à 6, nous allons utiliser un switch pour afficher des pages différentes</p>
+<p>La variable de type get nommée "id" apparaît quand on clique sur un des liens ci-dessus, elle contient un numérique de 1 à 6, nous allons utiliser un switch pour afficher des pages différentes, le switch ne vérifie que les égalités, c'est pour cette raison que vous le trouverez principalement dans la gestion d'erreurs</p>
 <p>
     <?php
     // on va vérifier la valeur de la variable get nommée id, $_GET['id'],
     // si elle existe isset : est initialisée
     if(isset($_GET['id'])){
+        // création d'une variable locale pour traiter la variable get
         $idido = $_GET['id'];
         // sinon (elle n'existe pas)
     }else{
@@ -66,6 +67,7 @@ switch($idido){
         echo "<script>alert('Ceci est la page $idido')</script>";
         break;
     case 3:
+        // on importe un fichier local
         include "01-hello-world.php";
         break;
     // 4 ou 5
