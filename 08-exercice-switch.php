@@ -18,7 +18,7 @@ Toma Nikiforov, lui, sera bien présent à Rabat. Pour le Schaerbeekois, champio
         'texte'=>"Le boxeur britannique Anthony Joshua a confirmé lundi qu’il défendrait ses titres WBA-IBF-WBO des poids lourds face au Bulgare Kubrat Pulev le 20 juin à Londres, éloignant la perspective d’un combat de réunification.
 
 « 20 juin », a posté sur son compte Twitter le Britannique de 30 ans, avec une photo de lui décoré de ses trois ceintures mondiales reconquises lors de sa victoire aux points sur Andy Ruiz en décembre en Arabie saoudite.",
-    ]
+    ],
 ];
 ?>
 <!DOCTYPE html>
@@ -34,8 +34,52 @@ Toma Nikiforov, lui, sera bien présent à Rabat. Pour le Schaerbeekois, champio
 </p>
 <?php
 
+// on vérifie si la variable get "id" existe
+if(isset($_GET['id'])){
+    // passage en variable locale
+    $id = $_GET['id'];
+// sinon
+}else{
+    // valeur en int de la page une ($id existe dans tous les cas)
+    $id = 1;
+}
+
+// le switch vérifie l'égalité non stricte (==) d'une variable
+switch ($id){
+    // on vérifie si la variable vaut 1 ou "1"
+    case 1:
+        // concaténation entre " avec les { }
+        echo "<h3>{$tab[1]['titre']}</h3>";
+        echo "<p>{$tab[1]['texte']}</p>";
+        break;
+    case 2:
+        // concaténation avec le . ou la ,
+        echo "<h3>".$tab[2]['titre']."</h3>";
+        echo "<p>",$tab[2]['texte'],"</p>";
+        break;
+    case 3:
+        // on évite la concaténation avec un nombre conséquent de echo
+        echo "<h3>";
+        echo $tab[3]['titre'];
+        echo "</h3>";
+        echo "<p>";
+        echo $tab[3]['texte'];
+        echo "</p>";
+        break;
+    case 4:
+        // on évite même l'echo! en utilisant de l'html et le echo raccourci <?= "dublabla" ? >
+        ?>
+        <h3><?=$tab[4]['titre']?></h3>
+        <p><?=$tab[4]['texte']?></p>
+<?php
+        break;
+    default:
+        ?>
+    <h3>Qu'est-ce que tu fous!</h3>
+<?php
+    echo "<p>touche pas mon url!</p>";
+}
 ?>
-<h3>TITRE</h3>
-<p>TEXT</p>
+
 </body>
 </html>
