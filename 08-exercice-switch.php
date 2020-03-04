@@ -45,7 +45,7 @@ if(isset($_GET['id'])){
 }
 
 // le switch vérifie l'égalité non stricte (==) d'une variable
-switch ($id){
+switch ($id) {
     // on vérifie si la variable vaut 1 ou "1"
     case 1:
         // concaténation entre " avec les { }
@@ -54,8 +54,8 @@ switch ($id){
         break;
     case 2:
         // concaténation avec le . ou la ,
-        echo "<h3>".$tab[2]['titre']."</h3>";
-        echo "<p>",$tab[2]['texte'],"</p>";
+        echo "<h3>" . $tab[2]['titre'] . "</h3>";
+        echo "<p>", $tab[2]['texte'], "</p>";
         break;
     case 3:
         // on évite la concaténation avec un nombre conséquent de echo
@@ -69,17 +69,18 @@ switch ($id){
     case 4:
         // on évite même l'echo! en utilisant de l'html et le echo raccourci <?= "dublabla" ? >
         ?>
-        <h3><?=$tab[4]['titre']?></h3>
-        <p><?=$tab[4]['texte']?></p>
-<?php
+        <h3><?= $tab[4]['titre'] ?></h3>
+        <p><?= $tab[4]['texte'] ?></p>
+        <?php
         break;
     default:
         ?>
-    <h3>Qu'est-ce que tu fous!</h3>
-<?php
-    echo "<p>touche pas mon url!</p>";
+        <h3>Qu'est-ce que tu fous!</h3>
+        <?php
+        echo "<p>touche pas mon url!</p>";
 }
 ?>
-
+<h3><?= $tab[$id]['titre'] ?></h3>
+<p><?= $tab[$id]['texte'] ?></p>
 </body>
 </html>
