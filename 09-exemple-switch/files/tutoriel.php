@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/monstyle.css">
 
-    <title>Accueil</title>
+    <title>Mon Tuto</title>
 </head>
 <body>
 <div id="head"><?php include "content/header.php"; ?></div>
 <div id="content" class="container">
-    <h1>Accueil</h1>
-    <p>Ici notre accueil</p>
+    <h1>Mon Tuto</h1>
+    <p>Ceci est mon superbe tuto</p>
 </div>
 <div id="footer"><?php include "content/footer.php"; ?></div>
 
