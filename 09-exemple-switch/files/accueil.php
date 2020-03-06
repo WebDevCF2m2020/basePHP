@@ -17,8 +17,10 @@
     <p>Ici notre accueil</p>
 </div>
 <div id="footer"><?php include "content/footer.php"; ?></div>
-
+<script src="js/jquery-3.2.1.slim.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/popper.min.js"></script>
+
 </body>
 </html>
 
