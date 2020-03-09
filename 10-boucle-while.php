@@ -62,14 +62,33 @@
         echo "<h3>Exercice 1</h3>";
         echo '<p>$lulu vaut un chiffre au hasard entre -100 et 100</p>';
         echo '<p>faites une boucle tant que $lulu est plus petit que 50, en ajoutant 1 à chaque tour, affichez $lulu | <br>puis une ligne avec $lulu vaut ....</p>';
+        $lulu = mt_rand(-100,100);
+        while($lulu<50){
+            echo $lulu." | ";
+            $lulu++;
+        }
+        echo '<p>$lulu vaut maintenant '.$lulu.'</p>';
         echo "<h3>Exercice 2</h3>";
         echo '<p>$lulu vaut un chiffre au hasard entre 0 et 100</p>';
         echo '<p>faites une boucle tant que $lulu est plus petit que 80, en ajoutant 3 à chaque tour, affichez $lulu | <br>puis une ligne avec $lulu vaut ....</p>';
+        $lulu = mt_rand(0,100);
+        while($lulu<80) :
+            echo $lulu." | ";
+            $lulu+=3;
+        endwhile;
+        echo '<p>$lulu vaut maintenant '.$lulu."</p>";
         echo "<h3>Exercice 3</h3>";
         echo '<p>$lulu vaut un chiffre au hasard entre 0 et 300</p>';
         echo '<p>faites une boucle tant que $lulu est plus grand ou égal à 0, en retirant 1 à chaque tour, affichez $lulu | <br>puis une ligne avec $lulu vaut ....</p>';
+        $tt = mt_rand(0,300);
+        while($tt>=0){
+            echo "$tt | ";
+            $tt--;
+        }
+        echo '<p>$tt vaut maintenant '.$tt."</p>";
 
     ?>
+
     </pre>
 </body>
 </html>
