@@ -66,5 +66,31 @@ for($i=0;$i<$nb_stagiaires;$i+=2){
     echo "$i => $stagiaires[$i] | ";
 }
 ?>
+<h2>Sur un tableau associatif</h2>
+<p>En cas de tableau associatif, on utilise quasi exclusivement le foreach</p>
+<h3>Que la valeur avec "as $value"</h3>
+<pre>foreach ($users as $valeur){
+    echo "$valeur | ";
+}</pre>
+<?php
+$users= [
+    "premier"=>"Lulu",
+    "deuxieme"=>"c'est la deuxième valeur",
+    "trois"=>"et on y va",
+    "quatre"=>4,
+        ];
+foreach ($users as $valeur){
+    echo "$valeur | ";
+}
+?>
+<h3>La clef et la valeur avec "as $key => $value"</h3>
+<pre>foreach ($users as $clef => $valeur){
+    echo "$clef => $valeur | ";
+}</pre>
+<?php
+foreach ($users as $clef => $valeur){
+    echo "$clef => $valeur | ";
+}
+?>
 </body>
 </html>
