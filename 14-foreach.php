@@ -57,5 +57,14 @@ for($i=0;$i<3;$i++){
     echo "$i => $stagiaires[$i] | ";
 }
 ?>
+<p>Exemple: afficher un stagiaire sur 2</p>
+<pre>for($i=0;$i<$nb_stagiaires;$i+=2){
+    echo "$i => $stagiaires[$i] | ";
+}</pre>
+<?php
+for($i=0;$i<$nb_stagiaires;$i+=2){
+    echo "$i => $stagiaires[$i] | ";
+}
+?>
 </body>
 </html>
