@@ -19,6 +19,8 @@ https://discord.gg/Z3DXN2
 
 #### Les vidéos seront mises sur Youtube, je vous communiquerai le lien plus tard
 
+https://www.youtube.com/playlist?list=PLMCr8I6IRn9c4lmkWgp62ulmzneOpi-8R
+
 #### Les travaux seront mis sur github également
 
 https://github.com/WebDevCF2m2020/basePHP
