@@ -19,7 +19,7 @@ https://discord.gg/Z3DXN2
 
 #### Les vidéos seront mises sur Youtube, je vous communiquerai le lien plus tard
 
-https://www.youtube.com/playlist?list=PLMCr8I6IRn9c4lmkWgp62ulmzneOpi-8R
+https://www.youtube.com/channel/UCYX6EjP2Oe4IcuOHC6U4l_A/
 
 #### Les travaux seront mis sur github également
 
