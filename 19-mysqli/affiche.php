@@ -21,7 +21,12 @@ or die("Erreur n° ".mysqli_errno($db)." Description : ".mysqli_error($db));
 <h1>Notre livre d'or</h1>
 </div>
 <div id="form">
-    ici mon formulaire
+    <form action="" method="post">
+        <input name="titre" type="text" placeholder="votre titre" required><br>
+        <input name="auteur" type="text" placeholder="votre nom" required><br>
+        <textarea name="texte" id="" cols="50" rows="10" placeholder="votre commentaire" required></textarea><br>
+        <input type="submit" value="Envoyer"><br>
+    </form>
 </div>
 <div id="contenu">
 <?php
@@ -31,6 +36,7 @@ while($item = mysqli_fetch_assoc($request)){
 <h3><?=$item['titre']?></h3>
     <p><?=$item['texte']?></p>
     <p>Par <?=$item['auteur']?> le <?=$item['ladate']?></p>
+    <hr>
 <?php
 }
 ?>
