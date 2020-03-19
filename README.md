@@ -13,13 +13,13 @@ https://www.php.net/manual/fr/
 
 https://webdevcf2m2020.slack.com
 
-#### Nous installerons aussi dicord
+#### Nous installerons aussi discord
 
 https://discord.gg/Z3DXN2
 
 #### Les vidéos seront mises sur Youtube, je vous communiquerai le lien plus tard
 
-https://www.youtube.com/channel/UCYX6EjP2Oe4IcuOHC6U4l_A/
+https://www.youtube.com/channel/UCW-WnJibSptIbzRkIZEsOpQ/playlists
 
 #### Les travaux seront mis sur github également
 
