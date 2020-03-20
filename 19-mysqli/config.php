@@ -13,7 +13,7 @@ define("DB_CHARSET","utf8");
  * pour accéder à phpmyadmin:
  * https://sql.webmo.fr/index.php?username=ammalberto&server=sql8614.phpnet.org
  *
-define("DB_HOST","sql8614.webmo.fr");
+define("DB_HOST","sqlgold.webmo.fr");
 define("DB_NAME","basephppourtous");
 define("DB_LOGIN","basephppourtous");
 define("DB_PWD","SN3wh2IfuMJE");
