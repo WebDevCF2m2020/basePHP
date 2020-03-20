@@ -20,4 +20,6 @@ define("DB_PWD","SN3wh2IfuMJE");
 define("DB_PORT",48614);
 define("DB_CHARSET","utf8");
  *
+ * le docs contenant ces paramètres:
+https://docs.google.com/document/d/10vi6TQyyxvN8nZTc_LmcL9ImZUhJIJx7piVVfcRo4yg/edit?usp=sharing
  */
