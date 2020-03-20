@@ -30,10 +30,12 @@ if(!$db){
 // si on a envoyé le formulaire
 if(isset($_POST['titre'])){
 
-
+    // importation de l'insertion dans la DB
+    require_once "insert.php";
+    
 // sinon, affichage de la vue
 }else {
 
 // chargement du modèle et de la vue
-    include_once "affiche.php";
+    require_once "affiche.php";
 }
