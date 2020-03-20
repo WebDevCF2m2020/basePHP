@@ -27,6 +27,13 @@ if(!$db){
  * Partie routage du contrôleur frontal
  */
 
+// si on a envoyé le formulaire
+if(isset($_POST['titre'])){
+
+
+// sinon, affichage de la vue
+}else {
 
 // chargement du modèle et de la vue
-include_once "affiche.php";
+    include_once "affiche.php";
+}
