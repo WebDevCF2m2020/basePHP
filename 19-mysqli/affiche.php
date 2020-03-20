@@ -1,4 +1,6 @@
 <?php
+// équivalent du modèle:
+
 // requête: SELECT
 $sql = "SELECT * FROM livredor ORDER BY ladate DESC;";
 
@@ -6,6 +8,8 @@ $sql = "SELECT * FROM livredor ORDER BY ladate DESC;";
 $request = mysqli_query($db,$sql)
 // ou en cas d'erreur
 or die("Erreur n° ".mysqli_errno($db)." Description : ".mysqli_error($db));
+
+// équivalent de la vue:
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,6 +43,9 @@ while($item = mysqli_fetch_assoc($request)){
     <hr>
 <?php
 }
+
+// afficher en mode debug la superglobale $_POST
+var_dump($_POST);
 ?>
 </div>
 </body>

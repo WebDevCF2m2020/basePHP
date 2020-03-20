@@ -16,12 +16,17 @@ require_once "config.php";
 $db = @mysqli_connect(DB_HOST,DB_LOGIN, DB_PWD, DB_NAME,DB_PORT);
 
 /*
- * Gestion d'erreur en mysqli procédural
+ * Gestion d'erreur de connexion en mysqli procédural
  */
 if(!$db){
     // affichage de l'erreur et arrêt du scritp : die()
     die("Erreur n° ".mysqli_connect_errno()." Description : ".mysqli_connect_error());
 }
+
+/*
+ * Partie routage du contrôleur frontal
+ */
+
 
 // chargement du modèle et de la vue
 include_once "affiche.php";
