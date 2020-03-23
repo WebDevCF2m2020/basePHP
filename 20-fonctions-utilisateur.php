@@ -22,6 +22,10 @@ function firstFunction(){
 echo $date;
 */
 
+// fonction avec un argument OBLIGATOIRE
+function secondFunction($arg1){
+    return $arg1;
+}
 
 ?>
 <!doctype html>
@@ -42,6 +46,12 @@ echo $date;
  echo firstFunction();
 
     ?></p>
-
+<h3>secondFunction avec argument obligatoire</h3>
+<p><?php
+    // il manque l'argument, erreur fatale, arrêt du script à cette ligne
+    echo secondFunction();
+    echo "<br>";
+    // echo secondFunction([]);
+    ?></p>
 </body>
 </html>
