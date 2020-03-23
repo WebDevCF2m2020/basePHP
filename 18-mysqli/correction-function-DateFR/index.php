@@ -1,5 +1,5 @@
 <?php
-echo $debut_tot = microtime(true);
+$debut_tot = microtime(true);
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,14 +20,151 @@ $b = "2020-02-25 16:34:05";
 $c = "2020-02-23 18:54:52";
 $d = "2020-02-06 07:44:44";
 $e = "2020-01-03 04:24:45";
-echo "$a | $b | $c | $d | $e";
+echo "| $a |<br>| $b |<br>| $c |<br>| $d |<br>| $e |";
     ?></p>
 <h2>Adrien</h2>
+<?php
 
+function DateFR($temps){
+    $day = date('w',strtotime($temps));
+    $dayTab = array('Dimanche','Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
 
+    $mouth = date('n',strtotime($temps));
+    $mouthTab = array('Janvier', 'Fervier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
+
+    $dayNum = date('j',strtotime($temps));
+    $hours = date('G',strtotime($temps));
+    $minutes = date('i',strtotime($temps));
+
+    $date = $dayTab[$day].' '.$dayNum.' '.$mouthTab[$mouth-1].' à '.$hours.'h'.$minutes.'.';
+
+    return $date;
+}
+function DateFRAdrien($temps){
+    $temps_converti = strtotime($temps);
+    $day = date('w',$temps_converti);
+    $dayTab = array('Dimanche','Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
+
+    $mouth = date('n',$temps_converti);
+    $mouthTab = array('Janvier', 'Fervier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
+
+    $dayNum = date('j',$temps_converti);
+    $hours = date('G',$temps_converti);
+    $minutes = date('i',$temps_converti);
+
+    $date = $dayTab[$day].' '.$dayNum.' '.$mouthTab[$mouth-1].' à '.$hours.'h'.$minutes.'.';
+
+    return $date;
+}
+
+$debut_adrien = microtime(true);
+echo DateFR($a)."<br>";
+echo DateFR($b)."<br>";
+echo DateFR($c)."<br>";
+echo DateFR($d)."<br>";
+echo DateFR($e)."<br>";
+$fin_adrien = microtime(true);
+echo "<br>Temps total de la fonction : ".($fin_adrien-$debut_adrien)." secondes<hr>";
+
+echo "<h3>Adrien après optimisation</h3>";
+$debut_adrienc = microtime(true);
+echo DateFRAdrien($a)."<br>";
+echo DateFRAdrien($b)."<br>";
+echo DateFRAdrien($c)."<br>";
+echo DateFRAdrien($d)."<br>";
+echo DateFRAdrien($e)."<br>";
+$fin_adrienc = microtime(true);
+echo "<br>Temps total de la fonction : ".($fin_adrienc-$debut_adrienc)." secondes<hr>";
+?>
+<h2>Thomas</h2>
+<?php
+function dateFR2($temps)
+{
+    $jour = [
+        "Monday" => "lundi",
+        "Tuesday" => "mardi",
+        "Wednesday" => "mercredi",
+        "Thursday" => "jeudi",
+        "Friday" => "vendredi",
+        "Saturday" => "samedi",
+        "Sunday" => "dimanche"];
+
+    $mois = [
+        "01" => 'Janvier',
+        "02" => 'Février',
+        "03" => 'Mars',
+        "04" => 'Avril',
+        "05" => 'Mai',
+        "06" => 'Juin',
+        "07" => 'Juillet',
+        "08" => 'Août',
+        "09" => 'Septembre',
+        "10" => 'Octobre',
+        "11" => 'Novembre',
+        "12" => 'Décembre'];
+    $hour = date('H:i ', strtotime($temps));
+    $day = date('l', strtotime($temps));
+    $month = date('m', strtotime($temps));
+    $dayint = date("d",strtotime($temps));
+
+    return $jour[$day]." " .$dayint." ". $mois[$month] . " à " . $hour;
+}
+
+function dateFR2Thomas($temps)
+{
+    $temps_converti = strtotime($temps);
+    $jour = [
+        "Monday" => "lundi",
+        "Tuesday" => "mardi",
+        "Wednesday" => "mercredi",
+        "Thursday" => "jeudi",
+        "Friday" => "vendredi",
+        "Saturday" => "samedi",
+        "Sunday" => "dimanche"];
+
+    $mois = [
+        "01" => 'Janvier',
+        "02" => 'Février',
+        "03" => 'Mars',
+        "04" => 'Avril',
+        "05" => 'Mai',
+        "06" => 'Juin',
+        "07" => 'Juillet',
+        "08" => 'Août',
+        "09" => 'Septembre',
+        "10" => 'Octobre',
+        "11" => 'Novembre',
+        "12" => 'Décembre'];
+    $hour = date('H:i ', $temps_converti);
+    $day = date('l', $temps_converti);
+    $month = date('m', $temps_converti);
+    $dayint = date("d",$temps_converti);
+
+    return $jour[$day]." " .$dayint." ". $mois[$month] . " à " . $hour;
+}
+
+$debut_Thomas = microtime(true);
+echo DateFR2($a)."<br>";
+echo DateFR2($b)."<br>";
+echo DateFR2($c)."<br>";
+echo DateFR2($d)."<br>";
+echo DateFR2($e)."<br>";
+$fin_Thomas = microtime(true);
+echo "<br>Temps total de la fonction : ".($fin_Thomas-$debut_Thomas)." secondes<hr>";
+echo "<h3>Thomas après optimisation</h3>";
+
+$debut_Thomas2 = microtime(true);
+echo dateFR2Thomas($a)."<br>";
+echo dateFR2Thomas($b)."<br>";
+echo dateFR2Thomas($c)."<br>";
+echo dateFR2Thomas($d)."<br>";
+echo dateFR2Thomas($e)."<br>";
+$fin_Thomas2 = microtime(true);
+echo "<br>Temps total de la fonction : ".($fin_Thomas2-$debut_Thomas2)." secondes<hr>";
+?>
 <hr>
 <?php
-echo $fin_tot = microtime(true);
+$fin_tot = microtime(true);
 echo "Temps de chargement total de la page : ".($fin_tot-$debut_tot)." secondes";
 ?>
 </body>
