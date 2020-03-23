@@ -22,9 +22,14 @@ function firstFunction(){
 echo $date;
 */
 
-// fonction avec un argument OBLIGATOIRE
+// fonction avec un argument OBLIGATOIRE, mais non strictement typé (avant php7)
 function secondFunction($arg1){
-    return $arg1;
+
+    // on convertit le texte de notre argument en majuscule
+    $response = strtoupper($arg1);
+
+    // envoi de la réponse
+    return $response;
 }
 
 ?>
@@ -56,9 +61,9 @@ function secondFunction($arg1){
 
     echo "<br>";
 
-    // PHP peut convertir un numérique en string, mais un tableau!!!, nous avons donc une Notice, le code continue donc à s'exécuter
+    // PHP peut convertir un numérique en string, mais pas un tableau!!!, nous avons donc une Notice, le code continue donc à s'exécuter,  mais après l'ajout dans la fonction du strtoupper, PHP nous renvoie un Warning, donc arrêt du script
     echo secondFunction([]);
-
+    
     echo "<br>";
     ?></p>
 </body>
