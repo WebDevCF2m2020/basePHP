@@ -26,8 +26,25 @@ echo $date;
 function secondFunction($arg1){
 
     // on convertit le texte de notre argument en majuscule
-    $response = strtoupper($arg1);
+    $response = "| ".strtoupper($arg1)." |";
 
+    // envoi de la réponse
+    return $response;
+}
+
+// fonction avec argument obligatoire et un argument optionnel
+function thirdFunction($arg1,$up=true){
+
+    $response = "| ".$arg1." |";
+
+    // par défaut $up==true || $up === true
+    if($up){
+        // on met les caractères en majuscule
+        $response = strtoupper($response);
+    }else{
+        // on met les caractères en minuscule
+        $response = strtolower($response);
+    }
     // envoi de la réponse
     return $response;
 }
@@ -62,9 +79,20 @@ function secondFunction($arg1){
     echo "<br>";
 
     // PHP peut convertir un numérique en string, mais pas un tableau!!!, nous avons donc une Notice, le code continue donc à s'exécuter,  mais après l'ajout dans la fonction du strtoupper, PHP nous renvoie un Warning, donc arrêt du script
-    echo secondFunction([]);
-    
+    //echo secondFunction([]);
+
+    echo secondFunction("coucou les amis");
+
     echo "<br>";
+    ?></p>
+<h3>thirdFunction avec argument obligatoire et un argument optionnel</h3>
+<h4>! l'argument optionnel se met après les arguments obligatoires</h4>
+<p><?php
+    echo thirdFunction("Lulu est beau");
+    echo "<br>";
+    echo thirdFunction("Lulu est beau",true);
+    echo "<br>";
+    echo thirdFunction("Lulu est beau",false);
     ?></p>
 </body>
 </html>
