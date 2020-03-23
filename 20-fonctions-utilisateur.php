@@ -93,6 +93,14 @@ function thirdFunction($arg1,$up=true){
     echo thirdFunction("Lulu est beau",true);
     echo "<br>";
     echo thirdFunction("Lulu est beau",false);
+    echo "<br>";
+    $var = "UsEuRAlAcOn";
+    echo thirdFunction($var);
+    echo "<br>";
+    echo thirdFunction($var,false);
+    echo "<br>";
+    $lulu = thirdFunction($var,false);
+    echo secondFunction($lulu);
     ?></p>
 </body>
 </html>
