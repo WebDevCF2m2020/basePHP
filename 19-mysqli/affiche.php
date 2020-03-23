@@ -39,7 +39,7 @@ while($item = mysqli_fetch_assoc($request)){
     ?>
 <h3><?=$item['titre']?></h3>
     <p><?=$item['texte']?></p>
-    <p>Par <?=$item['auteur']?> le <?=$item['ladate']?></p>
+    <p>Par <?=$item['auteur']?> le <?=DateFR($item['ladate'])?></p>
     <hr>
 <?php
 }

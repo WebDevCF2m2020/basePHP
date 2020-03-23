@@ -9,6 +9,7 @@
  * Chargement des dépendances
  */
 require_once "config.php";
+require_once "fonctions.php";
 
 /*
  * Connexion procédurale à notre DB
