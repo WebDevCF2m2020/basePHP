@@ -49,9 +49,17 @@ function secondFunction($arg1){
 <h3>secondFunction avec argument obligatoire</h3>
 <p><?php
     // il manque l'argument, erreur fatale, arrêt du script à cette ligne
-    echo secondFunction();
+    // echo secondFunction();
+
+    // PHP peut convertir un numérique en string
+    echo secondFunction(2.56);
+
     echo "<br>";
-    // echo secondFunction([]);
+
+    // PHP peut convertir un numérique en string, mais un tableau!!!, nous avons donc une Notice, le code continue donc à s'exécuter
+    echo secondFunction([]);
+
+    echo "<br>";
     ?></p>
 </body>
 </html>
