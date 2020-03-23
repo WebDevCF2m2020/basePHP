@@ -1,3 +1,6 @@
+<?php
+echo $debut_tot = microtime(true);
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,5 +23,13 @@ $e = "2020-01-03 04:24:45";
 echo "$a | $b | $c | $d | $e";
     ?></p>
 <h2>Adrien</h2>
+
+
+<hr>
+<?php
+echo $fin_tot = microtime(true);
+echo "Temps de chargement total de la page : ".($fin_tot-$debut_tot)." secondes";
+?>
 </body>
 </html>
+
