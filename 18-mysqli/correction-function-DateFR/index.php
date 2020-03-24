@@ -187,6 +187,32 @@ echo dateFR2Thomas($j)."<br>";
 $fin_Thomas2 = microtime(true);
 echo "<br>Temps total de la fonction : ".($fin_Thomas2-$debut_Thomas2)." secondes<hr>";
 ?>
+<h2>Audrey</h2>
+<?php
+function dateFR3($temps)
+{
+    setlocale (LC_TIME, 'fr_FR.utf8','fra');
+    $temps = strftime("%A %d %B", strtotime($temps))." à ".strftime("%I", strtotime($temps))."h".strftime("%M", strtotime($temps));
+
+    return $temps ;
+}
+
+
+$debut_Audrey = microtime(true);
+echo dateFR3($a)."<br>";
+echo dateFR3($b)."<br>";
+echo DateFR3($c)."<br>";
+echo DateFR3($d)."<br>";
+echo DateFR3($e)."<br>";
+echo DateFR3($f)."<br>";
+echo DateFR3($g)."<br>";
+echo DateFR3($h)."<br>";
+echo DateFR3($i)."<br>";
+echo DateFR3($j)."<br>";
+$fin_Audrey = microtime(true);
+echo "<br>Temps total de la fonction : ".($fin_Audrey-$debut_Audrey)." secondes<hr>";
+
+?>
 <hr>
 <?php
 $fin_tot = microtime(true);
