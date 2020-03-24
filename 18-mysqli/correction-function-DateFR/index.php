@@ -20,7 +20,12 @@ $b = "2020-02-25 16:34:05";
 $c = "2020-02-23 18:54:52";
 $d = "2020-02-06 07:44:44";
 $e = "2020-01-03 04:24:45";
-echo "| $a |<br>| $b |<br>| $c |<br>| $d |<br>| $e |";
+$f = "2019-03-24 19:48:15";
+$g = "2018-06-22 20:39:48";
+$h = "2018-05-21 21:33:05";
+$i = "2018-05-18 14:45:03";
+$j = "2017-04-27 20:41:46";
+echo "| $a |<br>| $b |<br>| $c |<br>| $d |<br>| $e |<br>| $f |<br>| $g |<br>| $h |<br>| $i |<br>| $j |";
     ?></p>
 <h2>Adrien</h2>
 <?php
@@ -63,6 +68,11 @@ echo DateFR($b)."<br>";
 echo DateFR($c)."<br>";
 echo DateFR($d)."<br>";
 echo DateFR($e)."<br>";
+echo DateFR($f)."<br>";
+echo DateFR($g)."<br>";
+echo DateFR($h)."<br>";
+echo DateFR($i)."<br>";
+echo DateFR($j)."<br>";
 $fin_adrien = microtime(true);
 echo "<br>Temps total de la fonction : ".($fin_adrien-$debut_adrien)." secondes<hr>";
 
@@ -73,6 +83,11 @@ echo DateFRAdrien($b)."<br>";
 echo DateFRAdrien($c)."<br>";
 echo DateFRAdrien($d)."<br>";
 echo DateFRAdrien($e)."<br>";
+echo DateFRAdrien($f)."<br>";
+echo DateFRAdrien($g)."<br>";
+echo DateFRAdrien($h)."<br>";
+echo DateFRAdrien($i)."<br>";
+echo DateFRAdrien($j)."<br>";
 $fin_adrienc = microtime(true);
 echo "<br>Temps total de la fonction : ".($fin_adrienc-$debut_adrienc)." secondes<hr>";
 ?>
@@ -149,6 +164,11 @@ echo DateFR2($b)."<br>";
 echo DateFR2($c)."<br>";
 echo DateFR2($d)."<br>";
 echo DateFR2($e)."<br>";
+echo DateFR2($f)."<br>";
+echo DateFR2($g)."<br>";
+echo DateFR2($h)."<br>";
+echo DateFR2($i)."<br>";
+echo DateFR2($j)."<br>";
 $fin_Thomas = microtime(true);
 echo "<br>Temps total de la fonction : ".($fin_Thomas-$debut_Thomas)." secondes<hr>";
 echo "<h3>Thomas après optimisation</h3>";
@@ -159,6 +179,11 @@ echo dateFR2Thomas($b)."<br>";
 echo dateFR2Thomas($c)."<br>";
 echo dateFR2Thomas($d)."<br>";
 echo dateFR2Thomas($e)."<br>";
+echo dateFR2Thomas($f)."<br>";
+echo dateFR2Thomas($g)."<br>";
+echo dateFR2Thomas($h)."<br>";
+echo dateFR2Thomas($i)."<br>";
+echo dateFR2Thomas($j)."<br>";
 $fin_Thomas2 = microtime(true);
 echo "<br>Temps total de la fonction : ".($fin_Thomas2-$debut_Thomas2)." secondes<hr>";
 ?>
