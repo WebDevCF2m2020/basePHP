@@ -54,16 +54,19 @@ function calculatriceSimple($arg1,$arg2,$arg3="+"){
 
     // transtypage LISTEPHP
 
-    // convertion de $arg1 en float, qui permet les opérations mathématiques sans perdre la virgule, attention envoie true si ça fonctionne, false si ça ne fonctionne
+    // conversion de $arg1 en float, qui permet les opérations mathématiques sans perdre la virgule, attention envoie true si ça fonctionne, false si ça ne fonctionne
     settype($arg1,"float");
 
-    // convertion par modification de type // en cas d'échec de conversion, transforme $arg2 avec la valeur 0
+    // conversion par modification de type // en cas d'échec de conversion, transforme $arg2 avec la valeur 0
     $arg2 = (float) $arg2;
 
     // utilisation d'un switch sur l'argument optionel LISTEPHP
     switch ($arg3){
         case "+":
             $resultat = $arg1+$arg2;
+            break;
+        case "-":
+            $resultat = $arg1-$arg2;
             break;
 
     }
@@ -134,7 +137,7 @@ function calculatriceSimple($arg1,$arg2,$arg3="+"){
     echo "<hr>";
     echo calculatriceSimple(625,-300,"+");
     echo "<hr>";
-    echo calculatriceSimple(625,-300,"-");
+    echo calculatriceSimple(625,25,"-");
     ?></p>
 </body>
 </html>
