@@ -191,7 +191,20 @@ echo "<br>Temps total de la fonction : ".($fin_Thomas2-$debut_Thomas2)." seconde
 <?php
 function dateFR3($temps)
 {
-    setlocale (LC_TIME, 'fr_FR.utf8','fra');
+
+    setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+    $temps = strftime("%A %d %B", strtotime($temps))." à ".strftime("%I", strtotime($temps))."h".strftime("%M", strtotime($temps));
+
+    return $temps ;
+}
+
+setlocale(LC_TIME, 'en_EN.utf8', 'eng');
+
+function dateFR3c($temps,$changeLangue=true)
+{
+    if($changeLangue) {
+        setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+    }
     $temps = strftime("%A %d %B", strtotime($temps))." à ".strftime("%I", strtotime($temps))."h".strftime("%M", strtotime($temps));
 
     return $temps ;
@@ -211,6 +224,21 @@ echo DateFR3($i)."<br>";
 echo DateFR3($j)."<br>";
 $fin_Audrey = microtime(true);
 echo "<br>Temps total de la fonction : ".($fin_Audrey-$debut_Audrey)." secondes<hr>";
+echo "<h3>Audrey après optimisation</h3>";
+
+$debut_Audreyc = microtime(true);
+echo dateFR3c($a)."<br>";
+echo dateFR3c($b,false)."<br>";
+echo DateFR3c($c,false)."<br>";
+echo DateFR3c($d,false)."<br>";
+echo DateFR3c($e,false)."<br>";
+echo DateFR3c($f,false)."<br>";
+echo DateFR3c($g,false)."<br>";
+echo DateFR3c($h,false)."<br>";
+echo DateFR3c($i,false)."<br>";
+echo DateFR3c($j,false)."<br>";
+$fin_Audreyc = microtime(true);
+echo "<br>Temps total de la fonction : ".($fin_Audreyc-$debut_Audreyc)." secondes<hr>";
 
 ?>
 <hr>

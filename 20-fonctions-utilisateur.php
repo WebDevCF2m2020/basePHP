@@ -49,6 +49,30 @@ function thirdFunction($arg1,$up=true){
     return $response;
 }
 
+// fonction avec 2 arguments obligatoires et un argument optionnel
+function calculatriceSimple($arg1,$arg2,$arg3="+"){
+
+    // transtypage LISTEPHP
+
+    // convertion de $arg1 en float, qui permet les opérations mathématiques sans perdre la virgule, attention envoie true si ça fonctionne, false si ça ne fonctionne
+    settype($arg1,"float");
+
+    // convertion par modification de type // en cas d'échec de conversion, transforme $arg2 avec la valeur 0
+    $arg2 = (float) $arg2;
+
+    // utilisation d'un switch sur l'argument optionel LISTEPHP
+    switch ($arg3){
+        case "+":
+            $resultat = $arg1+$arg2;
+            break;
+
+    }
+
+    // envoi du résultat
+    return $resultat;
+
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -71,7 +95,7 @@ function thirdFunction($arg1,$up=true){
 <h3>secondFunction avec argument obligatoire</h3>
 <p><?php
     // il manque l'argument, erreur fatale, arrêt du script à cette ligne
-    // echo secondFunction();
+    //echo secondFunction();
 
     // PHP peut convertir un numérique en string
     echo secondFunction(2.56);
