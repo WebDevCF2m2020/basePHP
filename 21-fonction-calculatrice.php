@@ -6,9 +6,18 @@ function calculatrice($nombre1,$nombre2,$operateur="+")
     if(!is_numeric($nombre1)||!is_numeric($nombre1)){
         return "Erreur, vos opérateurs doivent être numériques";
     }
-    // si on arrive ici (pas de return et donc inutilité d'utiliser un else) - convertion en float pour être certain de pouvoir effectuer l'opération
+    // si on arrive ici (pas de return et donc inutilité d'utiliser un else) - conversion en float pour être certain de pouvoir effectuer l'opération, en cas d'erreur de conversion, les nombres vaudont 0
     $nombre1 = (float) $nombre1;
     $nombre2 = (float) $nombre2;
+
+    // si un des nombres vaut 0 (vide), avant ou après la conversion
+    if(empty($nombre1)||empty($nombre2)){
+        return "Erreur, utiliser des nombres différents de 0";
+    }
+
+    // switch pour +-*/ Si vous le temps
+
+
 }
 
 // Typage fort, sécurité augmentée, future compilation
