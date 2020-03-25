@@ -125,6 +125,16 @@ function calculatriceSimple($arg1,$arg2,$arg3="+"){
     echo "<br>";
     $lulu = thirdFunction($var,false);
     echo secondFunction($lulu);
+    echo "<hr>";
+    echo calculatriceSimple(5,3.3);
+    echo "<hr>";
+    echo calculatriceSimple("lulu","lala");
+    echo "<hr>";
+    echo calculatriceSimple("10lulu","lala20");
+    echo "<hr>";
+    echo calculatriceSimple(625,-300,"+");
+    echo "<hr>";
+    echo calculatriceSimple(625,-300,"-");
     ?></p>
 </body>
 </html>
