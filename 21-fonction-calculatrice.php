@@ -15,8 +15,25 @@ function calculatrice($nombre1,$nombre2,$operateur="+")
         return "Erreur, utiliser des nombres différents de 0";
     }
 
-    // switch pour +-*/ Si vous le temps
+    // switch pour +-*/
+    switch($operateur){
+        case "+":
+            $result = $nombre1+$nombre2;
+            break;
+        case "-":
+            $result = $nombre1-$nombre2;
+            break;
+        case "*":
+            $result = $nombre1*$nombre2;
+            break;
+        case "/":
+            $result = $nombre1/$nombre2;
+            break;
+        default:
+            $result = "Erreur: opérateur invalide";
+    }
 
+    return $result;
 
 }
 
@@ -39,6 +56,15 @@ function calculatriceTypee(float $nombre1, float $nombre2, string $operateur="+"
 <body>
 <?php
 //calculatriceTypee(5,2.5,"+");
+
+// addition par défaut
+echo calculatrice(5,3);
+echo "<hr>";
+echo calculatrice(5,3,"+");
+echo "<hr>";
+echo calculatrice(5,3,"-");
+echo "<hr>";
+
 ?>
 </body>
 </html>
