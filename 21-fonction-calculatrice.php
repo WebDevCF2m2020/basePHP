@@ -4,7 +4,7 @@ function calculatrice($nombre1,$nombre2,$operateur="+")
 {
     // si $nombre1OU (|| or OR) $nombre2 ne sont pas numériques !is_numeric()
     if(!is_numeric($nombre1)||!is_numeric($nombre1)){
-        return "Erreur, vos opérateurs doivent être numériques";
+        return "Erreur, vos valeurs doivent être numériques";
     }
     // si on arrive ici (pas de return et donc inutilité d'utiliser un else) - conversion en float pour être certain de pouvoir effectuer l'opération, en cas d'erreur de conversion, les nombres vaudont 0
     $nombre1 = (float) $nombre1;
@@ -30,7 +30,7 @@ function calculatrice($nombre1,$nombre2,$operateur="+")
             $result = $nombre1/$nombre2;
             break;
         default:
-            $result = "Erreur: opérateur invalide";
+            $result = "Erreur, opérateur invalide";
     }
 
     return $result;
@@ -64,7 +64,16 @@ echo calculatrice(5,3,"+");
 echo "<hr>";
 echo calculatrice(5,3,"-");
 echo "<hr>";
-
+echo calculatrice(5,3,"*");
+echo "<hr>";
+echo calculatrice(5,3,"/");
+echo "<hr>";
+echo calculatrice("lulu",3);
+echo "<hr>";
+echo calculatrice("0",3);
+echo "<hr>";
+echo calculatrice(5,3,"//");
+echo "<hr>";
 ?>
 </body>
 </html>
