@@ -1,3 +1,7 @@
+<?php
+// appel des dépendances
+require_once "23-function-calculatrice.php";
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +12,20 @@
     <title>Application de calculatrice</title>
 </head>
 <body>
+<h1>Application de calculatrice</h1>
+<!--
+Créez un formulaire de type POST, avec 2 champs pour les numériques, un choix entre + - * /
+et un bouton "calculer".
 
+SI le formulaire est envoyé, utiliser la fonction calculatrice pour afficher le résultat sous la forme de:
+
+    5 + 12 = 17
+    ou
+    23 - 3 = 20
+    ou
+    affichage de l'erreur interne de la fonction en ROUGE
+
+Ce texte se trouve sous le formulaire de la calculatrice, bonus: gardez les derniers chiffres et le dernier opérateur dans le formulaire après l'envoi.
+-->
 </body>
 </html>
