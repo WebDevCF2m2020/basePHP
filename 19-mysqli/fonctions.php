@@ -7,17 +7,51 @@
  * Modifiez la fonction pour qu'elle donne l'heure de $temps
  * au format français (recherche sur la fonction date() et strtotime(), (voir fonction time, timestamp),  les tableaux, les conditions if ou switch)
  *
- * Exemple: Le lundi 23 mars 2020 à 23h10
- *          Le mardi 24 mars 2020 à 03h03
- *          Le jeudi 7 mai 2020 à 19h00
+ * Exemple: le lundi 23 mars 2020 à 23h10
+ *          le mardi 24 mars 2020 à 03h03
+ *          le jeudi 7 mai 2020 à 19h00
  * etc...
  */
 
 function DateFR($temps){
+
+    // variable de sortie de type string
+    $sortie = "";
+
     // on convertit le temps passé en argument (qui est au format datetime "2020-03-05 07:41:46") en temps UNIX en secondes (voir time())
     $temps_converti = strtotime($temps);
 
+    // création du tableau indexé de traduction des jours en français
+    $jours_fr = [
+      "lundi",
+      "mardi",
+      "mercredi",
+      "jeudi",
+      "vendredi",
+      "samedi",
+      "dimanche",
+    ];
+    // création du tableau "pseudo" indexé (modification de la valeur de départ de 0 à 1 pour utiliser date("n") => 1 à 12) de traduction des mois en français
+    $mois_fr = [
+      1 => "janvier",
+      "février",
+      "mars",
+      "avril",
+      "mai",
+      "juin",
+      "juillet",
+      "août",
+      "septembre",
+      "octobre",
+      "novembre",
+      "décembre",
+    ];
+
+    // on ajoute à la variable de sortie le "le " demandé dans l'énoncé
+    $sortie .= "le ";
 
 
-    //return $temps_converti;
+
+
+    return $sortie;
 }
