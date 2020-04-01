@@ -10,6 +10,7 @@
  * Exemple: le lundi 23 mars 2020 à 23h10
  *          le mardi 24 mars 2020 à 03h03
  *          le jeudi 7 mai 2020 à 19h00
+ *          le mercredi 1er avril 2020 à 11h23
  * etc...
  */
 
@@ -53,7 +54,7 @@ function DateFR($temps){
     // on ajoute le jour en français | date("N",$temps_converti) donne le jour de 1 (lundi) à 7 (dimanche), ce qui corresond aux clefs du tableau $jours_fr
     $sortie .= $jours_fr[date("N",$temps_converti)];
 
-    // on ajoute le jour du mois (format 1 à 31)
+    // on ajoute le jour du mois (format 1 à 31) | Le client est chiant, il veut 1er au lieu de 1 pour le premier jour du mois
     $sortie .= " ".date("j",$temps_converti);
 
     // on ajoute le mois en français (format 1 à 12)
