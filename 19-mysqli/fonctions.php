@@ -59,12 +59,22 @@ function DateFR($temps){
     // en ne prend le jour qu'une seule X pour éviter d'utiliser des date() inutiles
     $jour = date("j",$temps_converti);
 
-    // solution 1 (la moins bonne, le $jour n'est utilisé que pour la condition)
+    /*
+    solution 1 (la moins bonne, le $jour n'est utilisé que pour la condition)
     if($jour==1) {
         $sortie .= " " . date("j", $temps_converti)."er";
     }else{
         $sortie .= " " . date("j", $temps_converti);
     }
+    */
+
+    /* solution 2 (utilisation de jour)
+    if($jour==1) {
+        $sortie .= " $jour"."er";
+    }else{
+        $sortie .= " $jour";
+    }
+    */
 
 
     // on ajoute le mois en français (format 1 à 12)
