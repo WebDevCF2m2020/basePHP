@@ -55,7 +55,17 @@ function DateFR($temps){
     $sortie .= $jours_fr[date("N",$temps_converti)];
 
     // on ajoute le jour du mois (format 1 à 31) | Le client est chiant, il veut 1er au lieu de 1 pour le premier jour du mois
-    $sortie .= " ".date("j",$temps_converti);
+
+    // en ne prend le jour qu'une seule X pour éviter d'utiliser des date() inutiles
+    $jour = date("j",$temps_converti);
+
+    // solution 1 (la moins bonne, le $jour n'est utilisé que pour la condition)
+    if($jour==1) {
+        $sortie .= " " . date("j", $temps_converti)."er";
+    }else{
+        $sortie .= " " . date("j", $temps_converti);
+    }
+
 
     // on ajoute le mois en français (format 1 à 12)
     $sortie .= " ".$mois_fr[date("n",$temps_converti)];
