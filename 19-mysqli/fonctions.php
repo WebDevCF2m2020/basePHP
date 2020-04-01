@@ -76,6 +76,12 @@ function DateFR($temps){
     }
     */
 
+    /* solution 3 (ok)
+    $sortie .= " $jour";
+    if($jour==1) $sortie.="er";
+    */
+
+
 
     // on ajoute le mois en français (format 1 à 12)
     $sortie .= " ".$mois_fr[date("n",$temps_converti)];
