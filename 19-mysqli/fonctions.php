@@ -66,7 +66,9 @@ function DateFR($temps){
     $sortie .= " à ";
 
     // on ajoute l'heure (format 00 à 23) séparée d'un "h" suivie des minutes (00 à 59)
-    $sortie .= date("H",$temps_converti)."h".date("i",$temps_converti);
+    //$sortie .= date("H",$temps_converti)."h".date("i",$temps_converti);
+    // autre manière de le faire, on empêche la conversion du h avec l'antislash \
+    $sortie .= date("H\hi",$temps_converti);
 
 
 
