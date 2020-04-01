@@ -53,7 +53,11 @@ function DateFR($temps){
     // on ajoute le jour en français | date("N",$temps_converti) donne le jour de 1 (lundi) à 7 (dimanche), ce qui corresond aux clefs du tableau $jours_fr
     $sortie .= $jours_fr[date("N",$temps_converti)];
 
+    // on ajoute le jour du mois (format 1 à 31)
+    $sortie .= " ".date("j",$temps_converti);
 
+    // on ajoute le mois en français
+    $sortie .= " ".$mois_fr[date("n",$temps_converti)];
 
 
     return $sortie;
