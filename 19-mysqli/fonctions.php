@@ -62,6 +62,9 @@ function DateFR($temps){
     // on ajoute l'année (format nnnn)
     $sortie .= " ".date("Y",$temps_converti);
 
+    // on ajoute " à "
+    $sortie .= " à ";
+
 
     return $sortie;
 }
