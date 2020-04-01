@@ -81,6 +81,9 @@ function DateFR($temps){
     if($jour==1) $sortie.="er";
     */
 
+    // solution 4, la ternaire $var = (condition)? vrai : faux;
+    $sortie .= ($jour==1)? " $jour"."er": " $jour";
+
 
 
     // on ajoute le mois en français (format 1 à 12)
