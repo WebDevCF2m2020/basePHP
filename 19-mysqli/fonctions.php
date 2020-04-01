@@ -71,6 +71,6 @@ function DateFR($temps){
     $sortie .= date("H\hi",$temps_converti);
 
 
-
+    // envoi de la réponse de notre fonction
     return $sortie;
 }
