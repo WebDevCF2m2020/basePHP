@@ -2,7 +2,7 @@
 $debut_tot = microtime(true);
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
