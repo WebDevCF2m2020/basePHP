@@ -56,8 +56,11 @@ function DateFR($temps){
     // on ajoute le jour du mois (format 1 à 31)
     $sortie .= " ".date("j",$temps_converti);
 
-    // on ajoute le mois en français
+    // on ajoute le mois en français (format 1 à 12)
     $sortie .= " ".$mois_fr[date("n",$temps_converti)];
+
+    // on ajoute l'année (format nnnn)
+    $sortie .= " ".date("Y",$temps_converti);
 
 
     return $sortie;
