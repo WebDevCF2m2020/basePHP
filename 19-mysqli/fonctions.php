@@ -14,5 +14,10 @@
  */
 
 function DateFR($temps){
-    return $temps;
+    // on convertit le temps passé en argument (qui est au format datetime "2020-03-05 07:41:46") en temps UNIX en secondes (voir time())
+    $temps_converti = strtotime($temps);
+
+
+
+    //return $temps_converti;
 }
