@@ -21,9 +21,9 @@ function DateFR($temps){
     // on convertit le temps passé en argument (qui est au format datetime "2020-03-05 07:41:46") en temps UNIX en secondes (voir time())
     $temps_converti = strtotime($temps);
 
-    // création du tableau indexé de traduction des jours en français
+    // création du tableau "pseudo" indexé (utilisation date("N") ) de traduction des jours en français
     $jours_fr = [
-      "lundi",
+      1 =>"lundi",
       "mardi",
       "mercredi",
       "jeudi",
@@ -47,8 +47,11 @@ function DateFR($temps){
       "décembre",
     ];
 
-    // on ajoute à la variable de sortie le "le " demandé dans l'énoncé
+    // on ajoute à la valeur de la variable de sortie (.=) le "le " demandé dans l'énoncé
     $sortie .= "le ";
+
+    // on ajoute le jour en français | date("N",$temps_converti) donne le jour de 1 (lundi) à 7 (dimanche), ce qui corresond aux clefs du tableau $jours_fr
+    $sortie .= $jours_fr[date("N",$temps_converti)];
 
 
 
