@@ -1,0 +1,6 @@
+<?php
+/*
+ *
+ * Contrôleur frontal
+ *
+ */
