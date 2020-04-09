@@ -62,4 +62,20 @@ FROM utilisateur u
     ;
 
 
-# Séléction de utilisateur.thelogin et utilisateur.thename avec (SI jointure) thepage.thetitle (chaine séparée par |||). Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 2 lignes Voir GROUP_CONCAT et GROUP BY
+# Séléction de utilisateur.thelogin et utilisateur.thename avec (SI jointure) thepage.thetitle (chaine séparée par |||). Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 2 lignes Voir GROUP_CONCAT et GROUP BY - Tous les utilisateurs sur 1 ligne par utilisateur ! problème du nom de sortie
+SELECT u.thelogin, u.thename,
+			GROUP_CONCAT(p.thetitle SEPARATOR '|||')
+FROM utilisateur u
+	LEFT JOIN thepage p
+	ON u.idutilisateur = p.utilisateur_idutilisateur
+GROUP BY u.idutilisateur    
+    ;
+    
+ # Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 2 lignes Voir GROUP_CONCAT et GROUP BY - Tous les utilisateurs sur 1 ligne par utilisateur - Alias en sortie pour le GROUP_CONCAT AS thetitle
+SELECT u.thelogin, u.thename,
+			GROUP_CONCAT(p.thetitle SEPARATOR '|||') AS thetitle
+FROM utilisateur u
+	LEFT JOIN thepage p
+	ON u.idutilisateur = p.utilisateur_idutilisateur
+GROUP BY u.idutilisateur    
+    ;   
