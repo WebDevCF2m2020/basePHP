@@ -19,3 +19,19 @@ FROM thepage t
 	INNER JOIN utilisateur u
     ON t.utilisateur_idutilisateur = u.idutilisateur
 ;
+# IDEM mais avec des alias de sorties ! Utilisation du AS pour "voir" les noms des champs exportés (vers php etc....)
+
+SELECT t.*, 
+				u.idutilisateur AS id, u.thelogin AS login, u.thename AS nom
+FROM thepage t
+	INNER JOIN utilisateur u
+    ON t.utilisateur_idutilisateur = u.idutilisateur
+;
+
+# idem sans le champs utilisateur_idutilisateur trié par u.thedate descendant
+SELECT t.*, 
+				u.idutilisateur AS id, u.thelogin AS login, u.thename AS nom
+FROM thepage t
+	INNER JOIN utilisateur u
+    ON t.utilisateur_idutilisateur = u.idutilisateur
+;
