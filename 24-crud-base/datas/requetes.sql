@@ -50,4 +50,6 @@ SELECT p.idthepage, p.thetitle, p.thetext, p.thedate,
 FROM thepage p 
 	INNER JOIN utilisateur u 
     ON p.utilisateur_idutilisateur = u.idutilisateur 
+WHERE p.idthepage < 3    
 ORDER BY p.thedate DESC;
+
