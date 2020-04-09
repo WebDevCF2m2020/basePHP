@@ -81,9 +81,12 @@ GROUP BY u.idutilisateur    ;
 
  # IDEM mais il faut récupérer thepage.idthepage (AS idthepage) sans séparateurs (la virgule est le séparateur par défaut)
 SELECT u.thelogin, u.thename,
-			GROUP_CONCAT(p.thetitle SEPARATOR '|||') AS thetitle
+			GROUP_CONCAT(p.thetitle SEPARATOR '||$||') AS thetitle,
+			GROUP_CONCAT(p.idthepage) AS idthepage
 FROM utilisateur u
 	LEFT JOIN thepage p
 	ON u.idutilisateur = p.utilisateur_idutilisateur
 GROUP BY u.idutilisateur    
     ;   
+    
+    
