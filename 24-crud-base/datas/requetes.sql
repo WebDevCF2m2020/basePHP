@@ -54,3 +54,6 @@ WHERE p.idthepage < 3
 ORDER BY p.thedate DESC;
 
 # Séléction de utilisateur.thelogin et utilisateur.name avec (SI jointure) thepage.thetitle. Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 3 lignes
+
+
+# Séléction de utilisateur.thelogin et utilisateur.name avec (SI jointure) thepage.thetitle (chaine séparée par |||). Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 2 lignes Voir GROUP_CONCAT et GROUP BY
