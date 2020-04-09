@@ -53,7 +53,13 @@ FROM thepage p
 WHERE p.idthepage < 3    
 ORDER BY p.thedate DESC;
 
-# Séléction de utilisateur.thelogin et utilisateur.name avec (SI jointure) thepage.thetitle. Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 3 lignes
+# Sélection de utilisateur.thelogin et utilisateur.thename avec (SI jointure) thepage.thetitle. Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 3 lignes
+SELECT u.thelogin, u.thename,
+			p.thetitle
+FROM utilisateur u
+	LEFT JOIN thepage p
+	ON u.idutilisateur = p.utilisateur_idutilisateur
+    ;
 
 
-# Séléction de utilisateur.thelogin et utilisateur.name avec (SI jointure) thepage.thetitle (chaine séparée par |||). Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 2 lignes Voir GROUP_CONCAT et GROUP BY
+# Séléction de utilisateur.thelogin et utilisateur.thename avec (SI jointure) thepage.thetitle (chaine séparée par |||). Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 2 lignes Voir GROUP_CONCAT et GROUP BY
