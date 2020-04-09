@@ -53,3 +53,4 @@ FROM thepage p
 WHERE p.idthepage < 3    
 ORDER BY p.thedate DESC;
 
+# Séléction de utilisateur.thelogin et utilisateur.name avec (SI jointure) thepage.thetitle. Récupérez toutes les lignes (si pas de jointure thepage.thetitle == NULL) Résultat actuel: 3 lignes
