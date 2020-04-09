@@ -35,3 +35,11 @@ FROM thepage t
 	INNER JOIN utilisateur u
     ON t.utilisateur_idutilisateur = u.idutilisateur
 ;
+
+# Par Adrien (JOIN == INNER JOIN)
+SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
+				u.idutilisateur, u.thelogin, u.thename 
+FROM thepage p 
+	INNER JOIN utilisateur u 
+    ON p.utilisateur_idutilisateur = u.idutilisateur 
+ORDER BY p.thedate DESC;
