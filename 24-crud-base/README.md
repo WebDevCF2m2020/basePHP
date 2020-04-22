@@ -89,5 +89,28 @@ non complet
             }
     
             ?>
+### affiche.php
+              
+      $sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
+      				u.thelogin, u.thename 
+      FROM thepage p 
+      	INNER JOIN utilisateur u 
+          ON p.utilisateur_idutilisateur = u.idutilisateur 
+      WHERE p.idthepage=$idpage";
+      // on effectue la requête sql
+      $requete = mysqli_query($db,$sql) or die("Erreur: ".mysqli_errno($db));
+      
+      // on vérifie si on un résultat $nb == 1 ou $nb == 0
+      $nb = mysqli_num_rows($requete);
+      
+      // on a un article
+      if($nb==1) {
+          // si oui on stocke la ligne dans $item
+          $item =  mysqli_fetch_assoc($requete);
+          // on récupère le titre
+          $titre = $item['thetitle'];
+      }else{
+          $titre = "Erreur 404";
+      }
                 
         
