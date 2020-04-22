@@ -23,3 +23,11 @@
      * 
      * D /?suppression=2 => variable GET nommée suppression avec l'id de la page comme valeur => supprime la page dont l'id est 2 (avec confirmation)
      */
+### Connexion à la DB
+connexion très simple et sans vérification
+
+    // connexion à la base de donnée
+    $db = mysqli_connect("localhost","root","","crudbase",3308);
+    // on indique que notre connexion est en utf8
+    mysqli_set_charset($db,"utf8");
+    

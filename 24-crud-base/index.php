@@ -5,7 +5,7 @@
  *
  */
 
-// Nous aurons 4 variables get, la première sera l'action, la deuxième sera l'id
+// PLAN Nous aurons 4 variables get, la première sera l'action, la deuxième sera l'id
 /*
  * CRUD => Create Read Update Delete
  *
@@ -19,3 +19,10 @@
  *
  * D /?suppression=2 => variable GET nommée suppression avec l'id de la page comme valeur => supprime la page dont l'id est 2 (avec confirmation)
  */
+
+// connexion à la base de donnée
+$db = mysqli_connect("localhost","root","","crudbase",3308);
+// on indique que notre connexion est en utf8
+mysqli_set_charset($db,"utf8");
+
+
