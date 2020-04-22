@@ -51,5 +51,6 @@ if(isset($_GET['affiche'])){
 
 // sinon affichage de l'accueil
 }else{
-
+   // appel de la page d'accueil
+   require_once "pages/accueil.php";
 }
