@@ -30,4 +30,28 @@ connexion très simple et sans vérification
     $db = mysqli_connect("localhost","root","","crudbase",3308);
     // on indique que notre connexion est en utf8
     mysqli_set_charset($db,"utf8");
+### Index.php est également notre router
+non complet
+
+    // si on veut afficher le détail d'un article R
+    if(isset($_GET['affiche'])){
     
+    
+    
+    // si on veut insérer un nouvel article C
+    }elseif (isset($_GET['insertion'])){
+    
+    
+    // si on souhaite mettre à jour un article U
+    }elseif (isset($_GET['miseajour'])){
+    
+    
+    // si on souhaite supprimer un article D
+    }elseif (isset($_GET['suppression'])){
+    
+    
+    // sinon affichage de l'accueil
+    }else{
+    
+    }
+        
