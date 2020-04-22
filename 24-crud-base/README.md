@@ -54,4 +54,40 @@ non complet
     }else{
     
     }
+### Accueil.php
+
+    pages/accueil.php
+    ....
+    // requête qui récupère toutes les pages avec auteur correspondant
+    $sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
+    				u.thelogin, u.thename 
+    FROM thepage p 
+    	INNER JOIN utilisateur u 
+        ON p.utilisateur_idutilisateur = u.idutilisateur 
+    ORDER BY p.thedate DESC;";
+    // on effectue la requête sql
+    $requete = mysqli_query($db,$sql) or die("Erreur: ".mysqli_errno($db));
+    
+    // on compte le nombre de ligne de résultats
+    $nb = mysqli_num_rows($requete);
+    ....
+    <?php
+            // si on a pas de résultat
+            if(empty($nb)){
+                echo "<h4>Pas encore de pages sur le site</h4>";
+            // on a au moins une page
+            }else {
+                echo "<h4>Nombre de pages : $nb</h4>";
+                // tant qu'on a des pages
+                while ($item = mysqli_fetch_assoc($requete)) {
+                ?>
+                    <h5><?=$item['thetitle']?></h5>
+                    <p><?=$item['thetext']?> ... <a href="./?affiche=<?=$item['idthepage']?>">Lire la suite</a></p>
+                    <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6><hr>
+                <?php
+                }
+            }
+    
+            ?>
+                
         

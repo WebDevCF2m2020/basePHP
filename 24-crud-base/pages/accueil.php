@@ -1,11 +1,10 @@
 <?php
 // requête qui récupère toutes les pages avec auteur correspondant
 $sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
-				u.idutilisateur, u.thelogin, u.thename 
+				u.thelogin, u.thename 
 FROM thepage p 
 	INNER JOIN utilisateur u 
     ON p.utilisateur_idutilisateur = u.idutilisateur 
-WHERE p.idthepage >10
 ORDER BY p.thedate DESC;";
 // on effectue la requête sql
 $requete = mysqli_query($db,$sql) or die("Erreur: ".mysqli_errno($db));
@@ -41,9 +40,11 @@ $nb = mysqli_num_rows($requete);
             echo "<h4>Nombre de pages : $nb</h4>";
             // tant qu'on a des pages
             while ($item = mysqli_fetch_assoc($requete)) {
-
-                echo "<h4>{$item['thetitle']}</h4>";
-
+            ?>
+                <h5><?=$item['thetitle']?></h5>
+                <p><?=$item['thetext']?> ... <a href="./?affiche=<?=$item['idthepage']?>">Lire la suite</a></p>
+                <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6><hr>
+            <?php
             }
         }
 
