@@ -32,10 +32,11 @@ mysqli_set_charset($db,"utf8");
  *
  */
 
-// si on veut afficher le détail d'un article R
-if(isset($_GET['affiche'])){
+// si on veut afficher le détail d'un article ET que affiche contient un string composé  uniquement d'un entier non signé [0123456789]*   R
+if(isset($_GET['affiche']) && ctype_digit($_GET['affiche'])){
 
-
+    // appel de la page d'étail de l'article
+    require_once "pages/affiche.php";
 
 // si on veut insérer un nouvel article C
 }elseif (isset($_GET['insertion'])){
