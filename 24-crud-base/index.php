@@ -41,9 +41,11 @@ if(isset($_GET['affiche']) && ctype_digit($_GET['affiche'])){
     // appel de la page détail de l'article
     require_once "pages/affiche.php";
 
-// si on veut insérer un nouvel article C
+// si on veut insérer un nouvel article, existance de la variable get "insertion" C
 }elseif (isset($_GET['insertion'])){
 
+    // appel de la page d'insertion
+    require_once "pages/insertion.php";
 
 // si on souhaite mettre à jour un article U
 }elseif (isset($_GET['miseajour'])){
