@@ -1,6 +1,6 @@
 <?php
-// requête qui récupère toutes les pages avec auteur correspondant
-$sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
+// requête qui récupère toutes les pages avec auteur correspondant, on va prendre les 60 premiers caractères de thepage.thetext grâce à LEFT(p.thetext,60) AS thetext
+$sql = "SELECT p.idthepage, p.thetitle, LEFT(p.thetext,60) AS thetext, p.thedate, 
 				u.thelogin, u.thename 
 FROM thepage p 
 	INNER JOIN utilisateur u 
@@ -38,7 +38,7 @@ $nb = mysqli_num_rows($requete);
         // on a au moins une page
         }else {
             echo "<h4>Nombre de pages : $nb</h4>";
-            // tant qu'on a des pages
+            // tant qu'on a des pages, on prend les lignes une par une et on les mets dans $item dans l'ordre des clefs de résultats => $a[0,1,2] => $a[0] => $a[1] => $a[2] => plus de résultats, fin du while
             while ($item = mysqli_fetch_assoc($requete)) {
             ?>
                 <h5><?=$item['thetitle']?></h5>
