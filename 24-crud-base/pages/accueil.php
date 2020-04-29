@@ -25,7 +25,7 @@ $nb = mysqli_num_rows($requete);
 <body>
 <h1>Accueil du CRUD-Base</h1>
 <div id="menu">
-    <a href="./">Accueil</a>
+    Accueil
     <a href="./?insertion">Insertion d'une page</a>
 </div>
 <div id="content">
