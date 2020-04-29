@@ -42,7 +42,7 @@ $nb = mysqli_num_rows($requete);
             while ($item = mysqli_fetch_assoc($requete)) {
             ?>
                 <h5><?=$item['thetitle']?></h5>
-                <p><?=$item['thetext']?> ... <a href="./?affiche=<?=$item['idthepage']?>">Lire la suite</a></p>
+                <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?> ... <a href="./?affiche=<?=$item['idthepage']?>">Lire la suite</a></p>
                 <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6><hr>
             <?php
             }
