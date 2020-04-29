@@ -47,7 +47,7 @@ if($nb===1) {
         }else {
             ?>
                 <h5><?=$item['thetitle']?></h5>
-                <p><?=$item['thetext']?></p>
+                <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?></p>
                 <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6><hr>
             <?php
         }
