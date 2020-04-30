@@ -50,8 +50,8 @@ if($nb===1) {
                 <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?></p>
                 <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6>
             <p>
-                <img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/>
-                <img src="img/delete.png" alt="Supprimer" title="Supprimer"/>
+                <a href="./?miseajour=<?=$item['idthepage']?>"><img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/></a>
+                <a href="./?suppression=<?=$item['idthepage']?>"><img src="img/delete.png" alt="Supprimer" title="Supprimer"/></a>
             </p>
             <hr>
             <?php

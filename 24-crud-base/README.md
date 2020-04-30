@@ -214,4 +214,10 @@ non complet
        // appel de la page d'accueil
        require_once "pages/accueil.php";
     }
-           
+
+### boutons ajouter, modifier, supprimer
+
+    <p>
+                    <a href="./?miseajour=<?=$item['idthepage']?>"><img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/></a>
+                    <a href="./?suppression=<?=$item['idthepage']?>"><img src="img/delete.png" alt="Supprimer" title="Supprimer"/></a>
+                </p>           

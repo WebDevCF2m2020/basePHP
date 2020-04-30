@@ -45,8 +45,8 @@ $nb = mysqli_num_rows($requete);
                 <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?> ... <a href="./?affiche=<?=$item['idthepage']?>">Lire la suite</a></p>
                 <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6>
                 <p>
-                    <img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/>
-                    <img src="img/delete.png" alt="Supprimer" title="Supprimer"/>
+                    <a href="./?miseajour=<?=$item['idthepage']?>"><img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/></a>
+                    <a href="./?suppression=<?=$item['idthepage']?>"><img src="img/delete.png" alt="Supprimer" title="Supprimer"/></a>
                 </p>
                 <hr>
             <?php
