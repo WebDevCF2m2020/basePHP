@@ -26,7 +26,7 @@ $nb = mysqli_num_rows($requete);
 <h1>Accueil du CRUD-Base</h1>
 <div id="menu">
     Accueil
-    <a href="./?insertion">Insertion d'une page</a>
+    <a href="./?insertion"><img src="img/record.png" alt="insérer" title="Insérer une nouvelle page"></a> <a href="./?insertion" title="Insérer une nouvelle page">Insertion d'une page</a>
 </div>
 <div id="content">
     <h2>Liste de toutes nos pages</h2>
@@ -43,7 +43,12 @@ $nb = mysqli_num_rows($requete);
             ?>
                 <h5><?=$item['thetitle']?></h5>
                 <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?> ... <a href="./?affiche=<?=$item['idthepage']?>">Lire la suite</a></p>
-                <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6><hr>
+                <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6>
+                <p>
+                    <img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/>
+                    <img src="img/delete.png" alt="Supprimer" title="Supprimer"/>
+                </p>
+                <hr>
             <?php
             }
         }

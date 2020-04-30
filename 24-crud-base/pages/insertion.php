@@ -66,7 +66,7 @@ if(!empty($_POST)){
 <h1>Insertion dans CRUD-Base</h1>
 <div id="menu">
     <a href="./">Accueil</a>
-    Insertion d'une page
+    <img src="img/record.png" alt="insérer" title="Insérer une nouvelle page"> Insertion d'une page
 </div>
 <div id="content">
     <form action="" method="post" name="insertion">

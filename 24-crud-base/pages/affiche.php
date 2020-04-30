@@ -35,7 +35,7 @@ if($nb===1) {
 <h1>Page : <?=$titre?></h1>
 <div id="menu">
     <a href="./">Accueil</a>
-    <a href="./?insertion">Insertion d'une page</a>
+    <a href="./?insertion"><img src="img/record.png" alt="insérer" title="Insérer une nouvelle page"></a> <a href="./?insertion" title="Insérer une nouvelle page">Insertion d'une page</a>
 </div>
 <div id="content">
     <div id="pages">
@@ -48,7 +48,12 @@ if($nb===1) {
             ?>
                 <h5><?=$item['thetitle']?></h5>
                 <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?></p>
-                <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6><hr>
+                <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6>
+            <p>
+                <img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/>
+                <img src="img/delete.png" alt="Supprimer" title="Supprimer"/>
+            </p>
+            <hr>
             <?php
         }
         ?>
