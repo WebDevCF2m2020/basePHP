@@ -2,7 +2,19 @@
 /*
  * Update est l'élément le plus complexe du CRUD
  */
+// si le formulaire est envoyé (un seul formulaire dans la page)
+if(!empty($_POST)){
+    // protection de base trim (les espaces avant après) puis strip_tags (retire les balises) puis conversion des caractères spéciaux en entités html
+    $thetitle = htmlspecialchars(strip_tags(trim($_POST['thetitle'])),ENT_QUOTES);
 
+    // protection contre les balises, sauf <p><a><br> et <img>
+    $thetext = htmlspecialchars(strip_tags($_POST['thetext'],'<p><a><br><img>'),ENT_QUOTES);
+
+    // récupération de la date et conversion en timestamp (secondes UNIX), envoie un int OU, en cas d'erreur, un FALSE (empty fonctionnera)
+    $thedate = strtotime($_POST['thedate']);
+
+
+}
 
 // requête qui récupère la page grâce à son id avec auteur correspondant
 $sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, p.utilisateur_idutilisateur,
