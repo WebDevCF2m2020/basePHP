@@ -52,8 +52,13 @@ if(isset($_GET['affiche']) && ctype_digit($_GET['affiche'])){
 
 
 // si on souhaite supprimer un article D
-}elseif (isset($_GET['suppression'])){
+}elseif (isset($_GET['suppression'])&&ctype_digit($_GET['suppression'])){
 
+    // on convertit le string suppression en int
+    $idpage = (int) $_GET['suppression'];
+
+    // appel de la page
+    require_once "pages/delete.php";
 
 // sinon affichage de l'accueil
 }else{
