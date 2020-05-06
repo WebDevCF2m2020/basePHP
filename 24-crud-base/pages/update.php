@@ -2,6 +2,8 @@
 /*
  * Update est l'élément le plus complexe du CRUD
  */
+
+
 // requête qui récupère la page grâce à son id avec auteur correspondant
 $sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
 				u.thelogin, u.thename 
@@ -9,6 +11,7 @@ FROM thepage p
 	INNER JOIN utilisateur u 
     ON p.utilisateur_idutilisateur = u.idutilisateur 
 WHERE p.idthepage=$idpage";
+
 // on effectue la requête sql avec gestion d'erreur procédurale or die()
 $requete = mysqli_query($db,$sql) or die("Erreur: ".mysqli_errno($db));
 
@@ -49,6 +52,19 @@ if($nb===1) {
         // on a au moins une page
         }else {
             ?>
+            <form action="" method="post" name="update">
+                <p>Titre : <br>
+                    <input type="text" name="thetitle" placeholder="Titre" required maxlength="200" value="<?=$item['thetitle']?>" >
+                </p>
+                <p>Texte : <br>
+                    <textarea name="thetext" placeholder="Votre texte ici" required><?=$item['thetext']?></textarea>
+                </p>
+                <p>Date : <br>
+                    <input name="thedate" type="text" placeholder="0000-00-00 00:00:00" value="<?=$item['thedate']?>" required>
+                </p>
+                <p><input type="submit" value="Envoyer"></p>
+
+            </form>
                 <h5><?=$item['thetitle']?></h5>
                 <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?></p>
                 <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6>
