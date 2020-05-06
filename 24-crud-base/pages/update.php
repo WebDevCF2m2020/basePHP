@@ -63,16 +63,9 @@ if($nb===1) {
                     <input name="thedate" type="text" placeholder="0000-00-00 00:00:00" value="<?=$item['thedate']?>" required>
                 </p>
                 <p><input type="submit" value="Envoyer"></p>
-
+        <input type="hidden" name="idthepage" value="<?=$item['idthepage']?>">
             </form>
-                <h5><?=$item['thetitle']?></h5>
-                <p><?=html_entity_decode($item['thetext'],ENT_QUOTES)?></p>
-                <h6>Ecrit le <?=$item['thedate']?> par <?=$item['thename']?>, surnommé <?=$item['thelogin']?></h6>
-            <p>
-                <a href="./?miseajour=<?=$item['idthepage']?>"><img src="img/update.png" alt="Mettre à jour" title="Mettre à jour"/></a>
-                <a href="./?suppression=<?=$item['idthepage']?>"><img src="img/delete.png" alt="Supprimer" title="Supprimer"/></a>
-            </p>
-            <hr>
+               <pre><?php var_dump($_POST); ?></pre>
             <?php
         }
         ?>
