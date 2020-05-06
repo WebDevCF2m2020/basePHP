@@ -5,7 +5,7 @@
 
 
 // requête qui récupère la page grâce à son id avec auteur correspondant
-$sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
+$sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, p.utilisateur_idutilisateur,
 				u.thelogin, u.thename 
 FROM thepage p 
 	INNER JOIN utilisateur u 
@@ -63,7 +63,8 @@ if($nb===1) {
                     <input name="thedate" type="text" placeholder="0000-00-00 00:00:00" value="<?=$item['thedate']?>" required>
                 </p>
                 <p><input type="submit" value="Envoyer"></p>
-        <input type="hidden" name="idthepage" value="<?=$item['idthepage']?>">
+                <input type="hidden" name="idthepage" value="<?=$item['idthepage']?>">
+                <input type="hidden" name="utilisateur_idutilisateur" value="<?=$item['utilisateur_idutilisateur']?>">
             </form>
                <pre><?php var_dump($_POST); ?></pre>
             <?php
