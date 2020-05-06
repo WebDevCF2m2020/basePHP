@@ -19,6 +19,35 @@ if(!empty($_POST)){
     // récupération de l'id utilisateur convertit en entier avec (int) (si attaque = 0)
     $utilisateur_idutilisateur = (int) $_POST['utilisateur_idutilisateur'];
 
+    // vérification que tous les champs sont valides (NOT empty)
+    if( !empty($thetitle) &&
+        !empty($thetext) &&
+        !empty($thedate) &&
+        !empty($idthepage) &&
+        !empty($utilisateur_idutilisateur)
+    ){
+        // notre DB nous demande le temps en datetime
+        $thedate = date("Y-m-d H:i:s",$thedate);
+
+        // SQL de mise à jour de la table thepage
+        $sql="UPDATE thepage 
+                SET thetitle='$thetitle', thetext='$thetext', thedate='$thedate',utilisateur_idutilisateur=$utilisateur_idutilisateur                  
+              WHERE idthepage = $idthepage ;      
+";
+        // exécution de la requête
+        mysqli_query($db,$sql) or die("Erreur : ".mysqli_errno($db));
+
+        // redirection vers le détail de l'article
+        header("Location: ./?affiche=$idthepage");
+
+        // arrêt du script
+        exit();
+
+
+    }else{
+        echo "un champs est vide";
+    }
+
 }
 
 // requête qui récupère la page grâce à son id avec auteur correspondant
