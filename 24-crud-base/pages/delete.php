@@ -29,7 +29,7 @@ if($nb===1) {
     <title><?=$titre?></title>
 </head>
 <body>
-<h1>S<?=$titre?></h1>
+<h1><?=$titre?></h1>
 <div id="menu">
     <a href="./">Accueil</a>
     <a href="./?insertion"><img src="img/record.png" alt="insérer" title="Insérer une nouvelle page"></a> <a href="./?insertion" title="Insérer une nouvelle page">Insertion d'une page</a>
@@ -43,7 +43,8 @@ if($nb===1) {
         // on a au moins une page
         }else {
             ?>
-                <h5>Voulez-vous vraiment supprimer la page "<?=$item['thetitle']?>"</h5>
+                <h5>Voulez-vous vraiment supprimer la page "<?=$item['thetitle']?>" ?</h5>
+        <a href="?suppression=<?=$item['idthepage']?>&confirm=ok"><button type="button" >Oui</button></a> <button onclick="history.go(-1);">Non</button>
 
             <?php
         }
