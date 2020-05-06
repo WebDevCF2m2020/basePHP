@@ -48,8 +48,13 @@ if(isset($_GET['affiche']) && ctype_digit($_GET['affiche'])){
     require_once "pages/insertion.php";
 
 // si on souhaite mettre à jour un article U
-}elseif (isset($_GET['miseajour'])){
+}elseif (isset($_GET['miseajour'])&&ctype_digit($_GET['miseajour'])){
 
+    // on convertit miseajour en entier numérique
+    $idpage = (int) $_GET['miseajour'];
+
+    // appel de la page de mise à jour
+    require_once "pages/update.php";
 
 // si on souhaite supprimer un article D
 }elseif (isset($_GET['suppression'])&&ctype_digit($_GET['suppression'])){
