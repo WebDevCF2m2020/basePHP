@@ -1,4 +1,22 @@
 <?php
+// si il existe une variable get qui se nomme "confirm"
+if(isset($_GET['confirm'])){
+
+    // requête
+    $sql = "DELETE FROM thepage WHERE idthepage=$idpage";
+
+    // exécution de la requête
+    mysqli_query($db,$sql) or die("Erreur n° ".mysqli_errno($db));
+
+    // redirection, vers l'accueil
+    header("Location: ./");
+    // arrêt du chargement
+    exit();
+}
+
+
+
+
 // requête qui récupère la page grâce à son id
 $sql = "SELECT p.idthepage, p.thetitle 
         FROM thepage p 
