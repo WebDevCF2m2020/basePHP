@@ -13,6 +13,11 @@ if(!empty($_POST)){
     // récupération de la date et conversion en timestamp (secondes UNIX), envoie un int OU, en cas d'erreur, un FALSE (empty fonctionnera)
     $thedate = strtotime($_POST['thedate']);
 
+    // récupération de l'id convertit en entier avec (int) (si attaque = 0)
+    $idthepage = (int) $_POST['idthepage'];
+
+    // récupération de l'id utilisateur convertit en entier avec (int) (si attaque = 0)
+    $utilisateur_idutilisateur = (int) $_POST['utilisateur_idutilisateur'];
 
 }
 
