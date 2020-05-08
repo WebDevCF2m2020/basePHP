@@ -9,9 +9,37 @@ if(isset($_POST['lenom'],$_POST['lemail'],$_POST['lesujet'],$_POST['lemessage'])
     // filter_var avec FILTER_VALIDATE_EMAIL comme attribut va vérifier
     // si le mail est formaté correctement (pas de vérification de l'existence du mail)
     // on récupère le mail, sinon $lemail vaut false
-    $lemail = filter_var(trim($_POST['lenom']),"FILTER_VALIDATE_EMAIL");
+    $lemail = filter_var(trim($_POST['lemail']),FILTER_VALIDATE_EMAIL);
     $lesujet = strip_tags(trim($_POST['lesujet']));
     $lemessage = strip_tags(trim($_POST['lemessage']));
+
+    /*
+     *  Préparation pour l'envoi
+     */
+    // votre mail de réception
+    $monmail = "michaeljpitz@gmail.com";
+    // mail qui appartient à votre site (plus sécurisé que immédiatement le mail de
+    // l'utilisateur) - Pratique en cas d'entrée dans les spam, rajoutez ce mail dans vos
+    // contact et tous les mails venant de votre formulaire n'irons jamais dans les spam
+    $mailserveur = "robot@monsite.be";
+    // titre du mail
+    $titre = "Message venant de votre site";
+    // message final
+    $messageFinal = "Message envoyé par : \r\n\r\n";
+    $messageFinal .= $lemail ."\r\n\r\n";
+    $messageFinal .= "Titre: \r\n\r\n";
+    $messageFinal .= $lesujet."\r\n\r\n";
+    $messageFinal .= $lemessage;
+
+    /*
+     * Envoi du mail
+     */
+    // création des entêtes
+    $entetes = 'From: '. $mailserveur . "\r\n" .
+        'Reply-To: '. $lemail . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($monmail, $titre, $messageFinal, $entetes);
 }
 ?>
 <!doctype html>
