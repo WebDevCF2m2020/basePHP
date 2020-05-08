@@ -2,6 +2,7 @@
 /*
  * Update est l'élément le plus complexe du CRUD
  */
+
 // si le formulaire est envoyé (un seul formulaire dans la page)
 if(!empty($_POST)){
     // protection de base trim (les espaces avant après) puis strip_tags (retire les balises) puis conversion des caractères spéciaux en entités html
@@ -73,6 +74,12 @@ if($nb===1) {
 }else{
     $titre = "Erreur 404";
 }
+/*
+ * Chargement de la liste de tous les auteurs pour pouvoir en changer lors de l'update
+ */
+$sql = "SELECT idutilisateur, thelogin, thename FROM utilisateur ORDER BY thelogin ASC;";
+$requestUtil = mysqli_query($db, $sql) or die(mysqli_errno($db));
+
 ?>
 <!doctype html>
 <html lang="en">
