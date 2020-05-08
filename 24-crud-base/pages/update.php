@@ -117,7 +117,15 @@ $requestUtil = mysqli_query($db, $sql) or die(mysqli_errno($db));
                 </p>
                 <p><input type="submit" value="Envoyer"></p>
                 <input type="hidden" name="idthepage" value="<?=$item['idthepage']?>">
-                <input type="hidden" name="utilisateur_idutilisateur" value="<?=$item['utilisateur_idutilisateur']?>">
+                <!--
+                1) ce champs caché, qui contient l'id de l'auteur, doit devenir un select/option
+                pour pouvoir modifier l'auteur qui a écrit l'article
+                2) Le champs de l'auteur d'origine est sélectionné par défaut
+                -->
+                <select name="utilisateur_idutilisateur" required>
+
+                </select>
+                <!--<input type="hidden" name="utilisateur_idutilisateur" value="<?=//$item['utilisateur_idutilisateur']?>">-->
             </form>
                <pre><?php var_dump($_POST); ?></pre>
             <?php
