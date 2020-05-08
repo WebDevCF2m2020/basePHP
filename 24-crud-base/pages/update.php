@@ -123,9 +123,16 @@ $requestUtil = mysqli_query($db, $sql) or die(mysqli_errno($db));
                 2) Le champs de l'auteur d'origine est sélectionné par défaut
                 -->
                 <select name="utilisateur_idutilisateur" required>
+                    <?php
+                    while($user = mysqli_fetch_assoc($requestUtil)){
 
+                    ?>
+                        <option value="<?=$user['idutilisateur']?>"><?=$user['thelogin']?> | <?=$user['thename']?></option>
+                        <?php
+                    }
+                    ?>
                 </select>
-                <!--<input type="hidden" name="utilisateur_idutilisateur" value="<?=//$item['utilisateur_idutilisateur']?>">-->
+                <!--<input type="hidden" name="utilisateur_idutilisateur" value="<?=item['utilisateur_idutilisateur'] ?>">-->
             </form>
                <pre><?php var_dump($_POST); ?></pre>
             <?php
