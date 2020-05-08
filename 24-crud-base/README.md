@@ -311,4 +311,18 @@ Et dans delete.php
     </div>
     </body>
     </html>
-                               
+### Gestion de l'update
+CF
+
+    index.php
+    ...
+    // si on souhaite mettre à jour un article U
+    }elseif (isset($_GET['miseajour'])&&ctype_digit($_GET['miseajour'])){
+    
+        // on convertit miseajour en entier numérique
+        $idpage = (int) $_GET['miseajour'];
+    
+        // appel de la page de mise à jour
+        require_once "pages/update.php";
+Et dans affiche.php
+                  
