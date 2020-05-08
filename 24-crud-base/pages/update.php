@@ -115,7 +115,7 @@ $requestUtil = mysqli_query($db, $sql) or die(mysqli_errno($db));
                 <p>Date : <br>
                     <input name="thedate" type="text" placeholder="0000-00-00 00:00:00" value="<?=$item['thedate']?>" required>
                 </p>
-                <p><input type="submit" value="Envoyer"></p>
+
                 <input type="hidden" name="idthepage" value="<?=$item['idthepage']?>">
                 <!--
                 1) ce champs caché, qui contient l'id de l'auteur, doit devenir un select/option
@@ -125,16 +125,33 @@ $requestUtil = mysqli_query($db, $sql) or die(mysqli_errno($db));
                 <select name="utilisateur_idutilisateur" required>
                     <?php
                     while($user = mysqli_fetch_assoc($requestUtil)){
-
+                    /*
+                    on doit comparer l'id de l'auteur qui se trouve dans la table thepage
+                    utilisateur_idutilisateur (c'est la clef étrangère liée à idutilisateur
+                    de la table utilisateur), avec l'id de l'auteur qui se trouve dans
+                    utilisateur pour savoir quel utilisateur est sélectionné dans notre
+                    DB
+                    */
+                    // version ternaire
+                    $selectionnee =
+                        ($user['idutilisateur']===$item['utilisateur_idutilisateur'])
+                        ? "selected" : "";
+                    /*
+                     * version simple
+                     */
+                    if($user['idutilisateur']===$item['utilisateur_idutilisateur']){
+                        $selectionnee = "selected";
+                    }else{
+                        $selectionnee = "";
+                    }
                     ?>
-                        <option value="<?=$user['idutilisateur']?>"><?=$user['thelogin']?> | <?=$user['thename']?></option>
+                        <option value="<?=$user['idutilisateur']?>" <?=$selectionnee?>><?=$user['thelogin']?> | <?=$user['thename']?></option>
                         <?php
                     }
                     ?>
                 </select>
-                <!--<input type="hidden" name="utilisateur_idutilisateur" value="<?=item['utilisateur_idutilisateur'] ?>">-->
+                <p><input type="submit" value="Envoyer"></p>
             </form>
-               <pre><?php var_dump($_POST); ?></pre>
             <?php
         }
         ?>
