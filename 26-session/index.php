@@ -38,7 +38,7 @@ if(!isset($_SESSION['hit'])){
     <li><a href="index.php">index</a></li>
     <li><a href="page.php">page</a></li>
     <li><a href="page2.php">page2</a></li>
-    <li><a href="">page3</a></li>
+    <li><a href="page3.php">page3</a></li>
 </ul>
 <p>affichage de votre identifiant de session: <?=session_id()?></p>
 <p>affichage de la variable d'arrivée sur la page d'index.php: <?=$_SESSION['heurearriveeindex']?></p>

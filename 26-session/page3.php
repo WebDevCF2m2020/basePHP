@@ -3,9 +3,9 @@
 session_start();
 
 // si on a pas encore stocké l'heure d'arrivée sur page.php, on crée cette variable de session
-if(!isset($_SESSION['heurearriveepage2'])) {
+if(!isset($_SESSION['heurearriveepage3'])) {
     // datetime = YYYY-mm-dd HH:ii:ss
-    $_SESSION['heurearriveepage2'] = date("Y-m-d H:i:s");
+    $_SESSION['heurearriveepage3'] = date("Y-m-d H:i:s");
 }
 // si on ne comptabilise pas encore les clics
 if(!isset($_SESSION['hit'])){
@@ -34,7 +34,7 @@ if(!isset($_SESSION['hit'])){
     <li><a href="page3.php">page3</a></li>
 </ul>
 <p>affichage de votre identifiant de session: <?=session_id()?></p>
-<p>affichage de la variable d'arrivée sur la page2.php: <?=$_SESSION['heurearriveepage2']?></p>
+<p>affichage de la variable d'arrivée sur la page3.php: <?=$_SESSION['heurearriveepage3']?></p>
 <p>nombre total de pages vues: <?=$_SESSION['hit']?></p>
 <pre><?php var_dump($_SESSION); ?></pre>
 </body>
