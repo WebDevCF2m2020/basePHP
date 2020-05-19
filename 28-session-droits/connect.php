@@ -41,6 +41,7 @@ if(isset($_POST['thelogin'],$_POST['thepwd'])) {
 
             // redirection vers l'accueil
             header("Location: ./");
+            exit();
         }
 
 
