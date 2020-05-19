@@ -18,6 +18,8 @@ if(!isset($_SESSION['iddemasession'])|| $_SESSION['iddemasession']!==session_id(
 </head>
 <body>
 <h1>Accueil</h1>
+<h2>Bienvenue <?=$_SESSION['thelogin']?></h2>
+<h3>VOUS AVEZ LA PERMISSION <?=$_SESSION['droit']?></h3>
 <p>Bienvenue sur mon site</p>
 </body>
 </html>
