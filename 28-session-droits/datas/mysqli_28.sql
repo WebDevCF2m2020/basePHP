@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3308
--- Généré le :  mar. 19 mai 2020 à 07:26
+-- Généré le :  mar. 19 mai 2020 à 07:34
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.3.12
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `mysqli_28`
 --
+CREATE DATABASE IF NOT EXISTS `mysqli_28` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `mysqli_28`;
 
 -- --------------------------------------------------------
 
