@@ -7,6 +7,13 @@ if(!isset($_SESSION['iddemasession'])|| $_SESSION['iddemasession']!==session_id(
     header("Location: connect.php");
     exit();
 }
+
+// vérification de la permission, seul l'admin et le modo ont accès à cette page (0 et 1 admis)
+if($_SESSION['droit']==2){
+    header("Location: ./");
+    exit();
+}
+
 ?>
 <!doctype html>
 <html lang="en">
