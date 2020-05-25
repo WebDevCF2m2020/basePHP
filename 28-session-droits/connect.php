@@ -66,6 +66,6 @@ if(isset($_POST['thelogin'],$_POST['thepwd'])) {
     <input type="password" name="thepwd" placeholder="Votre mot de passe" required><br>
     <input type="submit" value="envoyer"><br>
 </form>
-<pre><?php var_dump($_POST,$util,$_SESSION)?></pre>
+<pre><?php @var_dump($_POST,$util,$_SESSION)?></pre>
 </body>
 </html>

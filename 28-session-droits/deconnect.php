@@ -4,8 +4,8 @@
 // session_name("autrenom")
 session_start();
 
-// Détruit toutes les variables de session
-$_SESSION = array();
+// Détruit toutes les variables de session en écrasant le tableau $_SESSION par un tableau
+$_SESSION = [];
 
 // Si vous voulez détruire complètement la session, effacez également
 // le cookie de session.

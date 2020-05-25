@@ -48,7 +48,9 @@ if(!empty($_POST)){
     $requestUtil = mysqli_query($db, $sql) or die(mysqli_errno($db));
 // si on a pas d'utilisateur, on ne peut pas insérer de page, redirection avec header("Location: ./") vers la page d'accueil, on arrête le script de cette page avec exit() ou die()
     if (empty(mysqli_num_rows($requestUtil))) {
+        // redirection car pas d'auteurs, une page a toujours besoin d'un auteur
         header("Location: ./");
+        // force l'arrêt du script
         exit();
     }
 }

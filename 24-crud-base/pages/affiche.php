@@ -1,5 +1,5 @@
 <?php
-// requête qui récupère la page grâce à son id avec auteur correspondant
+// requête qui récupère la page grâce à son id avec auteur correspondant, on utilise une jointure interne (INNER JOIN = JOIN)
 $sql = "SELECT p.idthepage, p.thetitle, p.thetext, p.thedate, 
 				u.thelogin, u.thename 
 FROM thepage p 
