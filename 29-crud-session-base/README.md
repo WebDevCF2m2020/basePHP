@@ -7,3 +7,8 @@ Avant de réellement coder, je vais créer la structure. Pages nécessaires, nav
 Quelqu'un d'autre s'en occupe (ou on le fera vers la fin si on travail seul, sauf si le choix est dicté par un besoin graphique ou un client)
 ### La base de donnée
 On va créer notre base de donnée avec un outil que vous connaissez : Workbench
+#### Exportation du fichier Workbench
+Nous mettons les fichiers dans datas,
+L'exportation de la DB vers notre serveur mysql est effectuée avec le fichier structure.sql
+#### Création des données de test
+Ici on va remplir la table "util" avec un admin / admin (login et mot de passe) dans phpmyadmin
