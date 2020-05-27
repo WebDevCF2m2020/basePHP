@@ -6,3 +6,11 @@ SELECT a.idarticle, a.titre, LEFT(a.texte,200) AS texte, a.ladate,
     INNER JOIN util u 
 		ON a.util_idutil = u.idutil
     ORDER BY a.ladate DESC;    
+    
+# requête pour la page detailarticle   
+SELECT a.idarticle, a.titre, a.texte, a.ladate,
+	   u.idutil, u.login, u.nomprenom		
+	FROM article a
+    INNER JOIN util u 
+		ON a.util_idutil = u.idutil
+    WHERE a.idarticle=2;  
