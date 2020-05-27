@@ -1,0 +1,108 @@
+Adrien
+
+Plus
+- Mail en HTML
+- Deux langues
+- Bonne gestion des sessions
+- Code bien structuré
+- Utilisation des transanctions MySQL, expressions régulières
+
+Moins
+- Message d'avertissement lors du reçu de mail d'inscription (à cause de l'adresse d'envoi @gmail)
+- Peut-être utiliser à la place de la validation par regex des fonctions avec un filtre mail
+- Design mobile-first mais soucis côté PC (penser à utiliser des polices à taille variable => vw, vh à la place d'une taille fixe)
+- Quelques petites fautes d'orthographes à vérifier (notamment dans le tuto Gulp) => Pensez à demander à Xavier
+- Séparer les deux formulaires pour moins de confusion (Enregistrement & connexion)
+- Problème de headers à régler (apparus à partir du moment où les droits admin ont été accordés)
+
+Message: Epatant !
+
+Alain
+
+Plus
+- Bonne utilisation de bootstrap, site quasiment responsive
+- Design sobre et propre
+
+Moins
+- Images trop lourdes (temps de chargement trop long => réduire la taille des images que tu utilises à une taille plus basse que leur taille d'origine)
+- Sur le site de ta femme penser à ne pas mettre directement l'email mais plutôt un formulaire (pour éviter les spams & robots)
+- Régler un souci de mise à l'échelle dans la partie liens quand il y a 5 colonnes
+- 2 Doctypes/Head sur toutes les pages
+- Mettre le CSS inline dans un fichier
+- Accorder l'accès à ton code aux formateurs sur github
+- Mettre tes liens vers tes sites extérieurs en target _blank (pour ouvrir dans un nouvel onglet)
+
+Message: Bon travail, bravo pour avoir fait 2 sites !
+
+Audrey
+
+Plus
+- Beau site agréable et sobre, beau design
+- Bien joué pour le menu (cette animation de menu => croix !)
+- Très bien côté responsive
+
+Moins
+- Mieux indiquer où se trouve le menu
+- L'animation peut causer des soucis lorsqu'on tente de cliquer dessus (clic qui ne passe pas)
+
+Message: Magnifique !
+
+Chihab
+
+Message: Bon début de site, on attend de voir ce que ça va donner !
+
+Jessica
+
+Plus
+- Continue à s'accrocher aux cours
+- Bon système d'affichage de photos dans la galerie (par contre pensez à rendre un plus intuitif)
+
+Moins
+- Pas d'harmonie dans le design (un style différent pour chaque page)
+- Site beaucoup trop lourd (trop de ralentissements)
+- Contact non fonctionnel
+- Penser utiliser des designs plus simples et sobres
+- Soucis d'affichage de texte dans le CV
+
+Message: Des choses à améliorer mais continue de t'accrocher !
+
+Laetitia
+
+Plus
+- Système de galerie sympathique
+- Contrôleur frontal fonctionnel
+
+Moins
+- Contact non fonctionnel
+
+Message: Malgré les difficultés un début de site, accroche-toi !
+
+Marjorie
+
+Plus
+- Très bon responsive
+- Galerie sympathique & originale
+- Très beau design
+
+Moins
+- Complèter le tuto
+- Manque la partie liens
+- Pas d'espace avant le DOCTYPE ! (Pour le bien-être de Mike)
+
+Message: Très bien, design très agréable, continue comme ça !
+
+Saadallah
+
+Plus
+- Très beau design
+- Sobre et propre
+- Belle galerie faite main bien joué !
+
+
+Moins
+- Difficulté à cliquer dans le menu pendant les animations
+- Images trop lourdes
+- Améliorer le responsive dans la galerie (Gros problèmes en dessous de 1200px environ)
+- Problème de formulaire de contact sur le portfolio V1
+
+Message: Beau site et galerie totalement faite main, bien joué !
