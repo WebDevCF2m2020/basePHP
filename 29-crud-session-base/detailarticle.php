@@ -4,6 +4,10 @@
  * Affiche le détail d'un article grâce à son id
  *
  */
+
+// lancement d'une session
+session_start();
+
 // appel des dépendances
 require_once "config.php";
 require_once "fonctions.php";

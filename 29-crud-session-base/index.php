@@ -4,6 +4,10 @@
  * CECI est notre page d'accueil, pas un contrôlleur frontal !!!
  *
  */
+
+// lancement d'une session
+session_start();
+
 // appel des dépendances
 require_once "config.php";
 require_once "fonctions.php";
