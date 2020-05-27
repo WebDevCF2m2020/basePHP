@@ -43,6 +43,8 @@ if($nb===0){
 <body>
 <h1>Accueil</h1>
 <?php
+include("menu.php");
+
 if(isset($affiche)){
 ?>
 <h2><?=$affiche?></h2>
@@ -63,6 +65,7 @@ if(isset($affiche)){
         <?php
     }
 }
+include("menu.php");
 ?>
 </body>
 </html>

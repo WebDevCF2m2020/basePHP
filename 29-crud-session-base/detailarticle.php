@@ -56,6 +56,8 @@ if($nb){
 <body>
 <h1><?=$titre?></h1>
 <?php
+include("menu.php");
+
 // si on a récupéré l'article
 if(isset($article)){
 ?>
@@ -64,6 +66,8 @@ if(isset($article)){
 <p><?=$article['texte']?></p>
 <h5>Le <?=$article['ladate']?> par <?=$article['nomprenom']?> surnommé.e <?=$article['login']?></h5>
 <?php
+}else{
+    echo "<h5>$affiche</h5>";
 }
 ?>
 </body>
