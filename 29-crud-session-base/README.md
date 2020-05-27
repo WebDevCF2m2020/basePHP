@@ -34,5 +34,6 @@ Nous choisissons les méthodes suivant plusieurs critères (dans ce cas):
 ### Choix de début du codage
 - page d'accueil (index.php) : va afficher tous les articles au visiteur en mode publique
 - le fichier (config.php) contenant les paramètres permettant la connexion à notre base de donnée SQL
+- une page de fonctions (fonction.php) contenant nos fonctions, dont la connexion
 
 

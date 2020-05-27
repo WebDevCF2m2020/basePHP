@@ -6,6 +6,10 @@
  */
 // appel des dépendances
 require_once "config.php";
+require_once "fonctions.php";
+
+// Appel de notre fonction qui lance une connexion à MySQL
+$connect = connectMysql();
 
 ?>
 <!doctype html>
